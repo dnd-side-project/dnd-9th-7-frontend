@@ -22,5 +22,11 @@
   },
   "include": [
     "src"
-  ]
+  ],
+  "paths": {
+      "@pages/*": ["pages/*"],
+      "@features/*": ["features/*"],
+      "@apis/*": ["apis/*"],
+      "@common/*": ["common/*"],      
+    }
 }
