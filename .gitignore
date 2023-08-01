@@ -24,6 +24,7 @@ yarn-error.log*
 
 # zero install
 .yarn/*
+
 !.yarn/cache
 !.yarn/patches
 !.yarn/plugins
