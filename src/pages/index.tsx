@@ -16,7 +16,6 @@ function Home() {
   const handlePost = () => {
     fetch('/posts')
   .then((response) => response.json())
-  // eslint-disable-next-line no-console
   .then((data) => console.log(data));
   }
 
