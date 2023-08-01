@@ -63,6 +63,10 @@
     "eslint-plugin-prettier": "^5.0.0",
     "eslint-plugin-react": "^7.33.0",
     "eslint-plugin-react-hooks": "^4.6.0",
+    "msw": "^1.2.3",
     "prettier": "^3.0.0"
+  },
+  "msw": {
+    "workerDirectory": "public"
   }
 }
