@@ -1,0 +1,7 @@
+@font-face {
+  font-family: 'Pretendard';
+  font-display: swap;
+  src:
+    local('Pretendard'),
+    url('./PretendardVariable.woff2') format('woff2');
+}

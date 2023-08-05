@@ -4,16 +4,16 @@
  */
 
 export const theme = {
-    color: {
-        black: '#000000',
+  color: {
+    black: '#000000',
 
-        white: '#ffffff',
-        
-        orange: '#fC5b3f',
+    white: '#ffffff',
 
-        gray01: '#fcfcfc',
-        gray02: '#f5f5f5',
-        gray03: 'efefef',
-        gray04: 'e8e8e8',
-    },
-} as const
+    orange: '#fC5b3f',
+
+    gray01: '#fcfcfc',
+    gray02: '#f5f5f5',
+    gray03: 'efefef',
+    gray04: 'e8e8e8',
+  },
+} as const;
