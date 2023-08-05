@@ -1,4 +1,5 @@
 {
+  "extends": "./tsconfig.paths.json",
   "compilerOptions": {
     "target": "es5",
     "lib": [
@@ -23,12 +24,7 @@
   },
   "include": [
     "public",
-    "src"
+    "src",
+    "craco.config.js"
   ],
-  "paths": {
-      "@pages/*": ["pages/*"],
-      "@features/*": ["features/*"],
-      "@apis/*": ["apis/*"],
-      "@common/*": ["common/*"],    
-    }
 }
