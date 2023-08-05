@@ -1,4 +1,5 @@
 {
+  "extends": "./tsconfig.paths.json",
   "compilerOptions": {
     "target": "es5",
     "lib": [
@@ -18,15 +19,12 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react-jsx"
+    "jsx": "react-jsx",
+    "types": ["@emotion/react/types/css-prop"]
   },
   "include": [
-    "src"
+    "public",
+    "src",
+    "craco.config.js"
   ],
-  "paths": {
-      "@pages/*": ["pages/*"],
-      "@features/*": ["features/*"],
-      "@apis/*": ["apis/*"],
-      "@common/*": ["common/*"],    
-    }
 }

@@ -21,8 +21,8 @@ function Home() {
   // eslint-disable-next-line react/button-has-type
   return (
     <HomeContainer>
-      Home<button onClick={handlePost}>post button</button>
-      <button onClick={handleLogin}>login button</button>
+      타이포그래피<button onClick={handlePost}>post button</button>
+      <button onClick={handleLogin}>로그인 button</button>
     </HomeContainer>
   );
 }
