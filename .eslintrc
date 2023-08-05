@@ -11,9 +11,14 @@
     "parserOptions": {
         "project": "./tsconfig.json"
     },
-    // "rules": {
+    "rules": {
     //   "jsx-quotes": ["error", "prefer-single"],
     //   "quotes": ["error", "single", { "avoidEscape": true}],
-    //   "prettier/prettier": ["error", {"singleQuote": true, "parser": "flow"}]
-    // }
+    //   "prettier/prettier": ["error", {"singleQuote": true, "parser": "flow"}],
+      "react/react-in-jsx-scope": "off",
+      "@typescript-eslint/no-use-before-define": "off",
+      "import/prefer-default-export" : "off",
+      "react/function-component-definition" : "off",
+      "arrow-body-style" : "off"
+    }
 }
