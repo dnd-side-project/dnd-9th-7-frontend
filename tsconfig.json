@@ -27,6 +27,6 @@
       "@pages/*": ["pages/*"],
       "@features/*": ["features/*"],
       "@apis/*": ["apis/*"],
-      "@common/*": ["common/*"],      
+      "@common/*": ["common/*"],    
     }
 }

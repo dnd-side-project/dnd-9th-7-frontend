@@ -11,9 +11,12 @@
     "parserOptions": {
         "project": "./tsconfig.json"
     },
-    // "rules": {
+    "rules": {
     //   "jsx-quotes": ["error", "prefer-single"],
     //   "quotes": ["error", "single", { "avoidEscape": true}],
     //   "prettier/prettier": ["error", {"singleQuote": true, "parser": "flow"}]
-    // }
+    "import/prefer-default-export": "off",
+    "global-require": 0,
+    "react/button-has-type": "off"
+    }
 }
