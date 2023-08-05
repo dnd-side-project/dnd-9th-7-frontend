@@ -22,12 +22,13 @@
     "types": ["@emotion/react/types/css-prop"]
   },
   "include": [
+    "public",
     "src"
   ],
   "paths": {
       "@pages/*": ["pages/*"],
       "@features/*": ["features/*"],
       "@apis/*": ["apis/*"],
-      "@common/*": ["common/*"],      
+      "@common/*": ["common/*"],    
     }
 }
