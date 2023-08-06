@@ -1,26 +1,43 @@
 {
     "parser": "@typescript-eslint/parser",
-    "plugins": ["@typescript-eslint"],
+    "parserOptions": {
+        "project": "./tsconfig.json"
+    },    
+    "env": {
+        "browser": true,
+        "es6": true,
+        "node": true
+    },
     "extends": [
-        "plugin:@typescript-eslint/recommended",
         "airbnb",
         "airbnb/hooks",
         "airbnb-typescript",
-        "prettier"
+        "plugin:prettier/recommended",
+        "plugin:@typescript-eslint/recommended"
     ],
-    "parserOptions": {
-        "project": "./tsconfig.json"
-    },
+    "plugins": ["@typescript-eslint"],
     "rules": {
-    //   "jsx-quotes": ["error", "prefer-single"],
-    //   "quotes": ["error", "single", { "avoidEscape": true}],
-    //   "prettier/prettier": ["error", {"singleQuote": true, "parser": "flow"}],
-      "react/react-in-jsx-scope": "off",
-      "@typescript-eslint/no-use-before-define": "off",
-      "import/prefer-default-export" : "off",
-      "react/function-component-definition" : "off",
-      "arrow-body-style" : "off",
-      "global-require": 0,
-      "react/button-has-type": "off"
-    }
+        "react/jsx-filename-extension": [
+            1,
+            { "extensions": [".js", ".jsx", ".ts", ".tsx"] }
+        ],
+        "react/function-component-definition": [
+            2,
+            { "namedComponents": "arrow-function" }
+        ],
+        "react/prop-types": 0,
+        "import/no-unresolved": "off",
+        "import/no-cycle": "off",
+        "no-param-reassign": "off",
+        "no-use-before-define": "off",
+        "@typescript-eslint/no-use-before-define": "off",        
+        "prettier/prettier": [
+            "error",
+            {
+                "singleQuote": true,
+                "parser": "flow",
+                "endOfLine": "auto"
+            }
+        ]
+    }    
 }
