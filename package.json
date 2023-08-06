@@ -19,6 +19,7 @@
     "react-query": "^3.39.3",
     "react-router-dom": "^6.14.2",
     "react-scripts": "5.0.1",
+    "svg-sprite": "^2.0.2",
     "typescript": "^4.4.2",
     "web-vitals": "^2.1.0"
   },
@@ -30,6 +31,7 @@
     "lint": "eslint './src/**/*.{ts,tsx,js,jsx}'",
     "lint:fix": "eslint --fix './src/**/*.{ts,tsx,js,jsx}'",
     "prettier": "prettier --write 'src/**/*.{js,jsx,ts,tsx,css,md,json}' --config ./.prettierrc",
+    "make-sprite": "svg-sprite --config sprite-config.json public/icons/**/*.svg",
     "postinstall": "husky install",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"

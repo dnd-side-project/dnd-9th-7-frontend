@@ -1,11 +1,13 @@
+/* eslint-disable react/button-has-type */
 import React from 'react';
 import styled from '@emotion/styled';
+import { SvgIcon } from '@common/components/SvgIcon';
 
 const HomeContainer = styled.div`
   color: tomato;
 `;
 
-function Home() {
+const Home = () => {
   const handleLogin = () => {
     fetch('/login', { method: 'POST' })
       .then((res) => res.json())
@@ -18,13 +20,14 @@ function Home() {
       .then((data) => console.log(data));
   };
 
-  // eslint-disable-next-line react/button-has-type
   return (
     <HomeContainer>
       타이포그래피<button onClick={handlePost}>post button</button>
       <button onClick={handleLogin}>로그인 button</button>
+      <SvgIcon id='collection' width={20} height={20} />
+      <SvgIcon id='chevronDown2' />
     </HomeContainer>
   );
-}
+};
 
 export default Home;
