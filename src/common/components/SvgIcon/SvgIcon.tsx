@@ -1,7 +1,3 @@
-/* eslint-disable import/prefer-default-export */
-/* eslint-disable react/react-in-jsx-scope */
-/* eslint-disable react/jsx-props-no-spreading */
-
 import { SVGProps } from 'react';
 import sprites from './sprite/symbol/sprite.svg';
 

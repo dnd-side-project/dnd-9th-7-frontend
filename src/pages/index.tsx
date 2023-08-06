@@ -1,5 +1,4 @@
 /* eslint-disable react/button-has-type */
-import React from 'react';
 import styled from '@emotion/styled';
 import { SvgIcon } from '@common/components/SvgIcon';
 
