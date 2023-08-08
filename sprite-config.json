@@ -1,0 +1,14 @@
+{
+    "dest": "src/common/components/SvgIcon/sprite",
+    "shape": {
+      "id": {
+        "separator": "-"
+      }
+    },
+    "mode": {
+      "symbol": {
+        "sprite": "sprite.svg"
+      }
+    }
+}
+  
