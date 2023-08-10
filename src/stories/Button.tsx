@@ -29,17 +29,17 @@ interface ButtonProps {
 /**
  * Primary UI component for user interaction
  */
-export function Button({
+export const Button = ({
   primary = false,
   size = 'medium',
   backgroundColor,
   label,
   ...props
-}: ButtonProps) {
+}: ButtonProps) => {
   const mode = primary ? 'storybook-button--primary' : 'storybook-button--secondary';
   return (
     <button
-      type="button"
+      type='button'
       className={['storybook-button', `storybook-button--${size}`, mode].join(' ')}
       style={{ backgroundColor }}
       // eslint-disable-next-line react/jsx-props-no-spreading
@@ -48,4 +48,4 @@ export function Button({
       {label}
     </button>
   );
-}
+};

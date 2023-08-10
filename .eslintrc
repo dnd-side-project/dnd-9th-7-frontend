@@ -33,12 +33,12 @@
         "@typescript-eslint/no-use-before-define": "off",    
         "react/react-in-jsx-scope" : "off",
         "import/prefer-default-export" : "off", 
-        "react/jsx-props-no-spreading" : "off",  
+        "react/jsx-props-no-spreading" : "off", 
+        "global-require": "warn", 
         "prettier/prettier": [
             "error",
             {
                 "singleQuote": true,
-                "parser": "flow",
                 "endOfLine": "auto"
             }
         ]
