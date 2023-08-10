@@ -8,7 +8,7 @@ import { GlobalStyle, theme } from './styles';
 
 const queryClient = new QueryClient();
 
-function App() {
+const App = () => {
   return (
     <QueryClientProvider client={queryClient}>
       <BrowserRouter>
@@ -16,13 +16,13 @@ function App() {
           <GlobalStyle />
           <Layout>
             <Routes>
-              <Route path="/" element={<Home />} />
+              <Route path='/' element={<Home />} />
             </Routes>
           </Layout>
         </ThemeProvider>
       </BrowserRouter>
     </QueryClientProvider>
   );
-}
+};
 
 export default App;
