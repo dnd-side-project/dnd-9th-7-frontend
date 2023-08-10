@@ -28,7 +28,7 @@ const StyledNavigation = styled.header`
   align-items: center;
   justify-content: space-between;
   background-color: ${theme.color.black};
-  ${theme.font['22-bold']};
+  ${theme.font.bold22};
 `;
 
 const StyledNavigationLeft = styled.div`
