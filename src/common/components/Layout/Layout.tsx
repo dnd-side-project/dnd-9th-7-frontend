@@ -8,7 +8,7 @@ export const Layout = ({ children }: PropsWithChildren) => {
 
 const StyledLayout = styled.main`
   @media screen and (min-width: 390px) {
-    width: 34.2rem;
+    max-width: 34.2rem;
   }
   color: ${theme.color.white};
   padding-left: 2.4rem;
@@ -19,6 +19,5 @@ const StyledLayout = styled.main`
   flex-direction: column;
   align-items: center;
   margin: 0 auto;
-  width: 100%;
   position: relative;
 `;

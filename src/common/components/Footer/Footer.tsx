@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import { theme } from '@styles/theme';
 import type { PropsWithChildren } from 'react';
 
 export const Footer = ({ children }: PropsWithChildren) => {
@@ -20,14 +21,13 @@ const StyledFooter = styled.footer`
   position: absolute;
   padding-left: 2.4rem;
   padding-right: 2.4rem;
-  width: inherit;
+  height: 5.8rem;
+  width: calc(100% - 4.8rem);
   bottom: 0;
   z-index: 10;
-  display: flex;
-  height: 6.8rem;
-  flex-shrink: 0;
-  align-items: center;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  background-color: ${theme.color.gray12};
 `;
 
 const StyledFooterLeft = styled.div`
@@ -42,10 +42,10 @@ const StyledFooterRight = styled.div`
   place-items: center;
 `;
 
-const StyledFooterCenter = styled.span`
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
+const StyledFooterCenter = styled.div`
+  display: grid;
+  grid-auto-flow: column;
+  place-items: center;
 `;
 Footer.Left = FooterLeft;
 Footer.Right = FooterRight;
