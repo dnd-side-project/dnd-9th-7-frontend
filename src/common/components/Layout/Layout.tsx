@@ -10,6 +10,7 @@ const StyledLayout = styled.main`
   @media screen and (min-width: 390px) {
     width: 34.2rem;
   }
+  color: ${theme.color.white};
   padding-left: 2.4rem;
   padding-right: 2.4rem;
   min-height: 100vh;
