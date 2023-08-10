@@ -9,8 +9,8 @@ interface Props extends SVGProps<SVGSVGElement> {
 
 export const SvgIcon = ({
   id,
-  width = 16,
-  height = 16,
+  width = 26,
+  height = 26,
   stroke = 'default',
   fill = 'default',
   ...rest
