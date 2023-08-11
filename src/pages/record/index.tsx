@@ -1,8 +1,8 @@
 import { RecordPageNavigation } from '@common/components/Navigation';
 import styled from '@emotion/styled';
 import { theme } from '@styles/theme';
-import { Spacing } from '@common/Spacing';
-import { RecordReview } from '@features/Record';
+import { Spacing } from '@common/components/Spacing';
+import { Review, Place } from '@features/Record';
 
 const RecordPage = () => {
   return (
@@ -17,10 +17,9 @@ const RecordPage = () => {
       <StyledTitle>Situation*</StyledTitle>
       <StyledRecordDate>2023/01/02</StyledRecordDate>
       <Spacing size={3.4} />
-      <StyledTitle>Place</StyledTitle>
-      <StyleRecordInput placeholder='장소를 입력해주세요' />
+      <Place />
       <Spacing size={3.4} />
-      <RecordReview />
+      <Review />
       <Spacing size={3.4} />
       <StyledTitle>Record</StyledTitle>
     </>
@@ -53,17 +52,4 @@ const StyledRecordDate = styled.div`
   ${theme.font.medium16}
 `;
 
-const StyleRecordInput = styled.input`
-  background-color: inherit;
-  display: flex;
-  padding: 2.1rem 1.8rem 2.1rem 2.4rem;
-  justify-content: flex-start;
-  align-items: flex-start;
-  gap: 1.6rem;
-  align-self: stretch;
-  border: 1px solid ${theme.color.gray08};
-  margin-top: 1.2rem;
-  ${theme.font.medium16}
-  color: ${theme.color.white};
-`;
 export default RecordPage;

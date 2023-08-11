@@ -1,8 +1,7 @@
 import styled from '@emotion/styled';
 import { StyledTitle, commonStyles } from '@features/Record/record.styles';
-import { theme } from '@styles/theme';
 
-export const RecordReview = () => {
+export const Review = () => {
   return (
     <>
       <StyledTitle>Review</StyledTitle>
@@ -13,6 +12,5 @@ export const RecordReview = () => {
 
 const StyleRecordTextArea = styled.textarea`
   ${commonStyles()};
-  color: ${theme.color.white};
   background-color: inherit;
 `;
