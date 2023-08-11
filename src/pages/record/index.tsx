@@ -2,6 +2,7 @@ import { RecordPageNavigation } from '@common/components/Navigation';
 import styled from '@emotion/styled';
 import { theme } from '@styles/theme';
 import { Spacing } from '@common/Spacing';
+import { RecordReview } from '@features/Record';
 
 const RecordPage = () => {
   return (
@@ -19,8 +20,9 @@ const RecordPage = () => {
       <StyledTitle>Place</StyledTitle>
       <StyleRecordInput placeholder='장소를 입력해주세요' />
       <Spacing size={3.4} />
-      <StyledTitle>Review</StyledTitle>
-      <StyleRecordInput placeholder='한줄 평 가사를 입력해주세요' />
+      <RecordReview />
+      <Spacing size={3.4} />
+      <StyledTitle>Record</StyledTitle>
     </>
   );
 };
@@ -62,6 +64,6 @@ const StyleRecordInput = styled.input`
   border: 1px solid ${theme.color.gray08};
   margin-top: 1.2rem;
   ${theme.font.medium16}
-  color: ${theme.color.white}
+  color: ${theme.color.white};
 `;
 export default RecordPage;
