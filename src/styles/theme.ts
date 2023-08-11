@@ -85,7 +85,7 @@ export const theme = {
     `,
     semibold18: css`
       font-size: 1.8rem;
-      font-weight: 700;
+      font-weight: 600;
       line-height: 2.8rem;
     `,
     medium18: css`

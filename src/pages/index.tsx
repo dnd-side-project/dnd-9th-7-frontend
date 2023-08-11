@@ -1,7 +1,6 @@
 /* eslint-disable react/button-has-type */
 import { CalendarPageFooter } from '@common/components/Footer';
 import { CalendarPageNavigation } from '@common/components/Navigation';
-import { SvgIcon } from '@common/components/SvgIcon';
 import styled from '@emotion/styled';
 import { theme } from '@styles/theme';
 
@@ -17,9 +16,7 @@ const Home = () => {
           <StyledDate>12</StyledDate>
           <StyledWord>RECORD</StyledWord>
         </div>
-        <StyledRecordButton>
-          <SvgIcon id='chevronDown2' />
-        </StyledRecordButton>
+        <StyledRecordButton />
       </StyledContainer>
       <CalendarPageFooter />
     </>
