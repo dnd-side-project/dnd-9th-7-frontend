@@ -7,7 +7,7 @@ export const Place = () => {
     <>
       <StyledTitle>Place</StyledTitle>
       <StyleRecordPlace>
-        <Input placeholder='장소를 선책하세요' endComponents={<div>x</div>} />
+        <Input placeholder='장소를 선책하세요' />
       </StyleRecordPlace>
     </>
   );

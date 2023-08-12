@@ -2,14 +2,14 @@ import { RecordPageNavigation } from '@common/components/Navigation';
 import styled from '@emotion/styled';
 import { theme } from '@styles/theme';
 import { Spacing } from '@common/components/Spacing';
-import { Review, Place } from '@features/Record';
+import { Review, Place, Music } from '@features/Record';
+import { RecordPageFooter } from '@common/components/Footer';
 
 const RecordPage = () => {
   return (
     <>
       <RecordPageNavigation />
-      <StyledTitle>Music*</StyledTitle>
-      <StyledCD />
+      <Music />
       <Spacing size={3.4} />
       <StyledTitle>Date*</StyledTitle>
       <StyledRecordDate>2023/01/02</StyledRecordDate>
@@ -22,6 +22,7 @@ const RecordPage = () => {
       <Review />
       <Spacing size={3.4} />
       <StyledTitle>Record</StyledTitle>
+      <RecordPageFooter />
     </>
   );
 };
@@ -30,14 +31,6 @@ const StyledTitle = styled.div`
   ${theme.font.semibold18};
   color: ${theme.color.gray07};
   width: 100%;
-`;
-
-const StyledCD = styled.img`
-  border-radius: 50rem;
-  display: flex;
-  width: 100%;
-  padding-top: 100%;
-  border: 1px solid ${theme.color.gray08};
 `;
 
 const StyledRecordDate = styled.div`
