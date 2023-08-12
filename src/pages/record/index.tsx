@@ -2,8 +2,9 @@ import { RecordPageNavigation } from '@common/components/Navigation';
 import styled from '@emotion/styled';
 import { theme } from '@styles/theme';
 import { Spacing } from '@common/components/Spacing';
-import { Review, Place, Music } from '@features/Record';
+import { Review, Place, Music, YoutubePlay } from '@features/Record';
 import { RecordPageFooter } from '@common/components/Footer';
+import { RecordArea } from '@features/Record/RecordArea/RecordArea';
 
 const RecordPage = () => {
   return (
@@ -21,7 +22,10 @@ const RecordPage = () => {
       <Spacing size={3.4} />
       <Review />
       <Spacing size={3.4} />
-      <StyledTitle>Record</StyledTitle>
+      <RecordArea />
+      <Spacing size={3.4} />
+      <YoutubePlay />
+      <Spacing size={4.4} />
       <RecordPageFooter />
     </>
   );
