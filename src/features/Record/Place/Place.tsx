@@ -1,12 +1,14 @@
 import { Input } from '@common/components/Input';
+import { SvgIcon } from '@common/components/SvgIcon';
 import styled from '@emotion/styled';
-import { commonStyles, StyledTitle } from '@features/Record/record.styles';
+import { commonStyles, StyledTitle } from '@features/Record/record.style';
 
 export const Place = () => {
   return (
     <>
       <StyledTitle>Place</StyledTitle>
       <StyleRecordPlace>
+        <SvgIcon id='place' />
         <Input placeholder='장소를 선책하세요' />
       </StyleRecordPlace>
     </>
@@ -15,4 +17,5 @@ export const Place = () => {
 
 const StyleRecordPlace = styled.div`
   ${commonStyles()};
+  justify-content: left;
 `;

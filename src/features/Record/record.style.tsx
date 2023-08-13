@@ -1,6 +1,7 @@
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 import { theme } from '@styles/theme';
+import { SvgIcon } from '@common/components/SvgIcon';
 
 export const StyledTitle = styled.div`
   ${theme.font.semibold18};
@@ -19,4 +20,26 @@ export const commonStyles = () => css`
   margin-top: 1.2rem;
   ${theme.font.medium16};
   color: ${theme.color.white};
+`;
+
+export const StyledPlusButton = () => {
+  return (
+    <StyledPlusButtonContainer>
+      <SvgIcon id='whitePlus' />
+    </StyledPlusButtonContainer>
+  );
+};
+
+const StyledPlusButtonContainer = styled.button`
+  all: unset;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: ${theme.color.gray07};
+  border-radius: 10rem;
+  width: 6.2rem;
+  height: 6.2rem;
+  color: white;
+  top: 0;
+  left: 0;
 `;

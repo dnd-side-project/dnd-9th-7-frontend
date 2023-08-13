@@ -5,11 +5,9 @@ export const RecordPageFooter = () => {
   return (
     <Footer>
       <Footer.Left>
-        <SvgIcon id='musicLog' />
+        <SvgIcon id='trash' size={24} />
       </Footer.Left>
-      <Footer.Right>
-        <SvgIcon id='myPlaylist' />
-      </Footer.Right>
+      <Footer.Right />
     </Footer>
   );
 };

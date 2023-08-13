@@ -4,7 +4,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable react/no-unstable-nested-components */
 import styled from '@emotion/styled';
-import { commonStyles, StyledTitle } from '@features/Record/record.styles';
+import { commonStyles, StyledTitle } from '@features/Record/record.style';
 import { theme } from '@styles/theme';
 import { useState } from 'react';
 

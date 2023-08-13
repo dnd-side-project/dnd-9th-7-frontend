@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import { StyledTitle } from '@features/Record/record.styles';
+import { StyledTitle, StyledPlusButton } from '@features/Record/record.style';
 import { theme } from '@styles/theme';
 import { useResizeWidth } from '@common/hooks';
 import { useEffect, useState } from 'react';
@@ -15,7 +15,7 @@ export const Music = () => {
     <>
       <StyledTitle>Music*</StyledTitle>
       <StyledCD height={width as number}>
-        <StyledRecordButton> + </StyledRecordButton>
+        <StyledPlusButton />
       </StyledCD>
     </>
   );
@@ -32,18 +32,4 @@ const StyledCD = styled.div<{ height: number }>`
   position: relative;
   background-size: 'cover'; // 이미지를 div에 맞게 조절
   background-image: url(https://picsum.photos/236/354);
-`;
-
-const StyledRecordButton = styled.button`
-  all: unset;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: ${theme.color.gray07};
-  border-radius: 10rem;
-  width: 6.2rem;
-  height: 6.2rem;
-  color: white;
-  top: 0;
-  left: 0;
 `;

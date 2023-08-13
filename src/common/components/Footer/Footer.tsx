@@ -19,10 +19,8 @@ const FooterCenter = ({ children }: PropsWithChildren) => (
 
 const StyledFooter = styled.footer`
   position: sticky;
-  padding-left: 2.4rem;
-  padding-right: 2.4rem;
   height: 5.8rem;
-  width: calc(100% - 4.8rem);
+  width: calc(100% + 4.8rem);
   bottom: 0;
   z-index: 10;
   display: grid;

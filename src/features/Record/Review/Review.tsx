@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import { StyledTitle, commonStyles } from '@features/Record/record.styles';
+import { StyledTitle, commonStyles } from '@features/Record/record.style';
 
 export const Review = () => {
   return (
