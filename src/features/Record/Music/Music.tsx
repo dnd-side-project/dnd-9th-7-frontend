@@ -14,15 +14,36 @@ export const Music = () => {
   return (
     <>
       <StyledTitle>Music*</StyledTitle>
-      <StyledCD height={width as number} src='https://picsum.photos/236/354' />
+      <StyledCD height={width as number}>
+        <StyledRecordButton> + </StyledRecordButton>
+      </StyledCD>
     </>
   );
 };
 
-const StyledCD = styled.img<{ height: number }>`
+const StyledCD = styled.div<{ height: number }>`
   border-radius: 50rem;
+  justify-content: center;
+  align-items: center;
   display: flex;
   width: 100%;
   height: ${(props) => `${(props.height - 48) * 0.1}rem`};
   border: 1px solid ${theme.color.gray08};
+  position: relative;
+  background-size: 'cover'; // 이미지를 div에 맞게 조절
+  background-image: url(https://picsum.photos/236/354);
+`;
+
+const StyledRecordButton = styled.button`
+  all: unset;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: ${theme.color.gray07};
+  border-radius: 10rem;
+  width: 6.2rem;
+  height: 6.2rem;
+  color: white;
+  top: 0;
+  left: 0;
 `;
