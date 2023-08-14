@@ -35,7 +35,7 @@ const StyledPlusButtonContainer = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: ${theme.color.gray07};
+  background-color: ${theme.color.transparency06};
   border-radius: 10rem;
   width: 6.2rem;
   height: 6.2rem;
