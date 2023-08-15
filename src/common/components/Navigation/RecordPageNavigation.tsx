@@ -5,7 +5,7 @@ export const RecordPageNavigation = () => {
   return (
     <Navigation>
       <Navigation.Left>
-        <SvgIcon id='back' />
+        <SvgIcon id='leftArrow' />
       </Navigation.Left>
       <Navigation.Center>
         <span>기록하기</span>

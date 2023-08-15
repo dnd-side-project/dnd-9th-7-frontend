@@ -3,7 +3,7 @@
 export { default as musicLounge } from '../../../../public/icons/musicLounge.svg';
 export { default as musicLog } from '../../../../public/icons/musicLog.svg';
 export { default as myPlaylist } from '../../../../public/icons/myPlaylist.svg';
-export { default as back } from '../../../../public/icons/back.svg';
+export { default as leftArrow } from '../../../../public/icons/leftArrow.svg';
 export { default as blackPlus } from '../../../../public/icons/blackPlus.svg';
 export { default as whitePlus } from '../../../../public/icons/whitePlus.svg';
 export { default as gallery } from '../../../../public/icons/gallery.svg';
