@@ -17,6 +17,7 @@ const App = () => {
           <Layout>
             <Router />
           </Layout>
+          <div id='modal' />
         </ThemeProvider>
       </BrowserRouter>
     </QueryClientProvider>
