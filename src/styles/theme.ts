@@ -21,6 +21,14 @@ export const theme = {
     gray10: '#383838',
     gray11: '#2a2a2a',
     gray12: '#1a1a1a',
+
+    transparency01: 'rgba(255, 255, 255, 0.63)',
+    transparency02: 'rgba(255, 255, 255, 0.50)',
+    transparency03: 'rgba(255, 255, 255, 0.35)',
+    transparency04: 'rgba(255, 255, 255, 0.20)',
+    transparency05: 'rgba(68, 68, 68, 0.50)',
+    transparency06: 'rgba(44, 44, 44, 0.80)',
+    transparency07: 'rgba(0, 0, 0, 0.85)',
   },
   font: {
     semibold80: css`
@@ -85,7 +93,7 @@ export const theme = {
     `,
     semibold18: css`
       font-size: 1.8rem;
-      font-weight: 700;
+      font-weight: 600;
       line-height: 2.8rem;
     `,
     medium18: css`

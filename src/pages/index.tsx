@@ -1,39 +1,37 @@
 /* eslint-disable react/button-has-type */
 import { CalendarPageFooter } from '@common/components/Footer';
 import { CalendarPageNavigation } from '@common/components/Navigation';
-import { SvgIcon } from '@common/components/SvgIcon';
 import styled from '@emotion/styled';
 import { theme } from '@styles/theme';
+import { useNavigate } from 'react-router-dom';
+import { Spacing } from '@common/components/Spacing';
+import { SvgIcon } from '@common/components/SvgIcon';
 
 const Home = () => {
+  const navigation = useNavigate();
   return (
     <>
       <CalendarPageNavigation />
-      <div>캘린더 영역</div>
       <StyledContainer>
+        <Spacing size={3} />
         <div>
           <StyledDate>07</StyledDate>
           <StyledWord>DAY</StyledWord>
           <StyledDate>12</StyledDate>
           <StyledWord>RECORD</StyledWord>
         </div>
-        <StyledRecordButton>
-          <SvgIcon id='chevronDown2' />
+        <StyledRecordButton onClick={() => navigation('/record')}>
+          <SvgIcon id='blackPlus' size={18} />
         </StyledRecordButton>
       </StyledContainer>
-      <CalendarPageFooter />
+      <CalendarPageFooter css={{ position: 'absolute' }} />
     </>
   );
 };
 
-// NOTE: Footer 쪽 스타일과 상당히 유사해서 하나의 컴포넌트로 뺄 수 있을 것 같음
 const StyledContainer = styled.div`
-  position: absolute;
-  bottom: 0;
   padding-bottom: 6.8rem;
-  padding-left: 2.4rem;
-  padding-right: 2.4rem;
-  width: calc(100% - 4.8rem);
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;

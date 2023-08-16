@@ -41,12 +41,14 @@ const StyledNavigationRight = styled.div`
   display: grid;
   grid-auto-flow: column;
   place-items: center;
+  ${theme.font.semibold16}
 `;
 
 const StyledNavigationCenter = styled.span`
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
+  ${theme.font.semibold18}
 `;
 Navigation.Left = NavigationLeft;
 Navigation.Right = NavigationRight;
