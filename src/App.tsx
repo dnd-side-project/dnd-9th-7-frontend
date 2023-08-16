@@ -17,7 +17,7 @@ const App = () => {
           <Layout>
             <Router />
           </Layout>
-          <div id='modal' />
+          <div id='overlay' />
         </ThemeProvider>
       </BrowserRouter>
     </QueryClientProvider>
