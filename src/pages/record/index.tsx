@@ -1,6 +1,14 @@
 import { RecordPageNavigation } from '@common/components/Navigation';
 import { Spacing } from '@common/components/Spacing';
-import { Date, Situation, Review, RecordArea, Place, Music, YoutubePlay } from '@features/Record';
+import {
+  RecordDate,
+  Situation,
+  Review,
+  RecordArea,
+  Place,
+  Music,
+  YoutubePlay,
+} from '@features/Record';
 import { RecordPageFooter } from '@common/components/Footer';
 
 const RecordPage = () => {
@@ -9,7 +17,7 @@ const RecordPage = () => {
       <RecordPageNavigation />
       <Music />
       <Spacing size={3.4} />
-      <Date />
+      <RecordDate />
       <Spacing size={3.4} />
       <Situation />
       <Spacing size={3.4} />
