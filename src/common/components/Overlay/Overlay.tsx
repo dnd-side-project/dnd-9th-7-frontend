@@ -2,7 +2,7 @@
 import type { PropsWithChildren } from 'react';
 
 import { useClickOutside } from '@common/hooks';
-import { Portal } from '@common/components/Portal/Portal';
+import { Portal } from '@common/components/Portal';
 import styled from '@emotion/styled';
 
 interface Props {

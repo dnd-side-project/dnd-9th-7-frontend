@@ -7,16 +7,16 @@ import { commonStyles, StyledTitle } from '@features/Record/record.style';
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
 import { useState } from 'react';
-import { Overlay } from '@common/components/Overlay/Overlay';
-import { useformatDate } from '@common/hooks/useFormatDate';
+import { Overlay } from '@common/components/Overlay';
+import { useformatDate, useOpen } from '@common/hooks';
 import { DateValue } from 'src/types';
-import { useOpen } from '@common/hooks/useOpen';
 
 export const RecordDate = () => {
   const [value, onChange] = useState<DateValue>(new Date());
   const { open, onOpen, onClose } = useOpen();
   const date = useformatDate(value);
 
+  console.log(open);
   return (
     <>
       {open && (
