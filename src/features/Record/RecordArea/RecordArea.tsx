@@ -90,15 +90,14 @@ const StyledrRecordArea = styled.div`
   display: flex;
   width: 100%;
   flex-direction: column;
+  height: 44.4rem;
   padding: 1.8rem;
   height: 48rem;
   justify-content: flex-start;
   align-items: flex-start;
   background-color: transparent;
   border: 1px solid rgba(255, 255, 255, 0.35);
-  padding: 1.8rem;
   color: ${theme.color.white};
-  height: 44.4rem;
 `;
 
 const StyledText = styled.textarea<{ num: number; lineNum: number }>`
