@@ -1,8 +1,14 @@
 import React from 'react';
 import styled from '@emotion/styled';
+import { SvgIcon } from '@common/components/SvgIcon';
 
 export const KakaoButton = () => {
-  return <StyledKakaoButton>카카오톡으로 계속하기</StyledKakaoButton>;
+  return (
+    <StyledKakaoButton>
+      <SvgIcon id='kakaoChat' />
+      카카오톡으로 계속하기
+    </StyledKakaoButton>
+  );
 };
 
 const StyledKakaoButton = styled.div`
@@ -15,4 +21,5 @@ const StyledKakaoButton = styled.div`
   height: 5.2rem;
   background-color: #fee500;
   margin-bottom: 8rem;
+  cursor: pointer;
 `;
