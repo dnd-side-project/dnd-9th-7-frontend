@@ -10,3 +10,4 @@ export { default as gallery } from '../../../../public/icons/gallery.svg';
 export { default as place } from '../../../../public/icons/place.svg';
 export { default as rightArrow } from '../../../../public/icons/place.svg';
 export { default as trash } from '../../../../public/icons/trash.svg';
+export { default as kakaoChat } from '../../../../public/icons/kakaoChat.svg';
