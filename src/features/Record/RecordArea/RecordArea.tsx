@@ -7,12 +7,15 @@ import styled from '@emotion/styled';
 import { commonStyles, StyledTitle } from '@features/Record/record.style';
 import { theme } from '@styles/theme';
 import { useState } from 'react';
+import { RecordAreaImage } from '@features/Record/RecordArea/RecordAreaImage';
+import { Spacing } from '@common/components/Spacing';
 
 /**
  * TODO : textarea 끝에서부터 입력하는 방법 더 찾아보기
  */
 export const RecordArea = () => {
   const [text, setText] = useState('');
+  const [imageUrl, setImageUrl] = useState('');
   const [textLength, setTextLength] = useState<number>();
 
   const handleInputChange = (e: any) => {
@@ -49,10 +52,11 @@ export const RecordArea = () => {
   };
 
   console.log(calculateLineCount());
+
   return (
     <>
       <StyledTitle>Record</StyledTitle>
-      <StyledrRecordAreaContainer>
+      <StyledrRecordAreaContainer imageUrl={imageUrl}>
         <StyledrRecordArea>
           <div style={{ flex: 1 }} />
           <StyledText
@@ -66,31 +70,34 @@ export const RecordArea = () => {
           />
         </StyledrRecordArea>
       </StyledrRecordAreaContainer>
+      <Spacing size={2.8} />
+      <RecordAreaImage setImageUrl={setImageUrl} />
     </>
   );
 };
 
-const StyledrRecordAreaContainer = styled.div`
+const StyledrRecordAreaContainer = styled.div<{ imageUrl: string }>`
   ${commonStyles()};
   border: none;
   height: 48rem;
-  background-color: ${theme.color.gray12};
+  background-color: ${({ imageUrl }) => (imageUrl ? 'rgba(0, 0, 0, 0.5)' : theme.color.gray12)};
   padding: 1.8rem;
+  background-size: 'cover';
+  background-image: ${({ imageUrl }) => (imageUrl ? `url(${imageUrl})` : 'none')};
 `;
 
 const StyledrRecordArea = styled.div`
   display: flex;
   width: 100%;
   flex-direction: column;
+  height: 44.4rem;
   padding: 1.8rem;
   height: 48rem;
   justify-content: flex-start;
   align-items: flex-start;
-  background-color: inherit;
+  background-color: transparent;
   border: 1px solid rgba(255, 255, 255, 0.35);
-  padding: 1.8rem;
   color: ${theme.color.white};
-  height: 44.4rem;
 `;
 
 const StyledText = styled.textarea<{ num: number; lineNum: number }>`
