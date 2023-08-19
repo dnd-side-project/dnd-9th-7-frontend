@@ -1,10 +1,13 @@
 import { MusicSearchPageNavigation } from '@common/components/Navigation';
+import { Spacing } from '@common/components/Spacing';
+import { MusicSearchInput } from '@features/MusicSearch/components';
 
 const MusicSearchPage = () => {
   return (
     <>
       <MusicSearchPageNavigation />
-      <div>sdf</div>
+      <MusicSearchInput />
+      <Spacing size={2.4}/>
     </>
   );
 };
