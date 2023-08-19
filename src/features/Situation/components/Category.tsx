@@ -1,15 +1,17 @@
+/* eslint-disable no-nested-ternary */
 import styled from '@emotion/styled';
 import { CategoryContext } from '@features/Situation/CategoryContext';
 import { theme } from '@styles/theme';
 import { useContext } from 'react';
 
 interface Props {
-  type: string;
+  type: 'emotion' | 'time' | 'weather';
   categoryList: { value: string; label: string }[];
 }
 
 export const Category = ({ type, categoryList }: Props) => {
   const { category, setCategory } = useContext(CategoryContext);
+
   const setDetailCategory = (value: string, label: string) => {
     if (type === 'emotion') {
       setCategory((prev) => ({
@@ -21,11 +23,17 @@ export const Category = ({ type, categoryList }: Props) => {
         ...prev,
         time: { value, label },
       }));
+    } else if (type === 'weather') {
+      setCategory((prev) => ({
+        ...prev,
+        weather: { value, label },
+      }));
     }
   };
 
   console.log(category);
-  const detailedState = type === 'emotion' ? category.emotion : category.time;
+  const detailedState =
+    type === 'emotion' ? category.emotion : type === 'time' ? category.time : category.weather;
   return (
     <StyledContainer>
       <StyledLine />
@@ -65,6 +73,7 @@ export const StyledEmoji = styled.div<{ isSelected: boolean }>`
   border-radius: 50rem;
   background: ${(props) => (props.isSelected ? theme.color.white : theme.color.gray12)};
   aspect-ratio: 1/1;
+  cursor: pointer;
 `;
 
 const StyledEmojiWrapper = styled.div<{ isSelected: boolean }>`

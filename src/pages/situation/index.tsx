@@ -23,6 +23,12 @@ const SituationPage = () => {
     { value: 'dinner', label: '저녁' },
     { value: 'dawn', label: '새벽' },
   ];
+  const weather = [
+    { value: 'sunny', label: '맑음' },
+    { value: 'cloud', label: '흐림' },
+    { value: 'rain', label: '비' },
+    { value: 'snow', label: '눈' },
+  ];
   return (
     <>
       <SituationPageNavigation />
@@ -36,6 +42,10 @@ const SituationPage = () => {
       <StyledTitle>Time</StyledTitle>
       <Spacing size={3} />
       <Category categoryList={time} type='time' />
+      <Spacing size={8.5} />
+      <StyledTitle>Weather</StyledTitle>
+      <Spacing size={3} />
+      <Category categoryList={weather} type='weather' />
     </>
   );
 };
