@@ -39,7 +39,7 @@ export { default as music_lounge_white } from '@public/icons/common/music_lounge
 export { default as my_playlist_gray } from '@public/icons/common/my_playlist_gray.svg';
 export { default as my_playlist_white } from '@public/icons/common/my_playlist_white.svg';
 export { default as note_white } from '@public/icons/common/note_white.svg';
-export { default as phote_gray } from '@public/icons/common/phote_gray.svg';
+export { default as photo_gray } from '@public/icons/common/photo_gray.svg';
 export { default as pin_white } from '@public/icons/common/pin_white.svg';
 export { default as plus_black } from '@public/icons/common/plus_black.svg';
 export { default as plus_white } from '@public/icons/common/plus_white.svg';
