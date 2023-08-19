@@ -3,7 +3,7 @@
 import { SvgIcon } from '@common/components/SvgIcon';
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
-import { commonStyles, StyledTitle } from '@features/Record/record.style';
+import { commonStyles, StyledRequiredField, StyledTitle } from '@features/Record/record.style';
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
 import { useState } from 'react';
@@ -16,7 +16,6 @@ export const RecordDate = () => {
   const { open, onOpen, onClose } = useOpen();
   const date = useformatDate(value);
 
-  console.log(open);
   return (
     <>
       {open && (
@@ -26,7 +25,9 @@ export const RecordDate = () => {
           </div>
         </Overlay>
       )}
-      <StyledTitle>Date*</StyledTitle>
+      <StyledTitle>
+        Date<StyledRequiredField>*</StyledRequiredField>
+      </StyledTitle>
       <StyledRecordDate onClick={onOpen}>
         <div
           css={css`

@@ -10,6 +10,7 @@ const globalCss = css`
   }
 
   button {
+    all: unset;
     cursor: pointer;
   }
 
