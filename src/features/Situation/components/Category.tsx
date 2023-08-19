@@ -1,14 +1,31 @@
 import styled from '@emotion/styled';
+import { CategoryContext } from '@features/Situation/CategoryContext';
 import { theme } from '@styles/theme';
-import { Dispatch, SetStateAction } from 'react';
+import { useContext } from 'react';
 
 interface Props {
-  category: string;
-  setCategory: Dispatch<SetStateAction<string>>;
+  type: string;
   categoryList: { value: string; label: string }[];
 }
 
-export const Category = ({ category, setCategory, categoryList }: Props) => {
+export const Category = ({ type, categoryList }: Props) => {
+  const { category, setCategory } = useContext(CategoryContext);
+  const setDetailCategory = (value: string, label: string) => {
+    if (type === 'emotion') {
+      setCategory((prev) => ({
+        ...prev,
+        emotion: { value, label },
+      }));
+    } else if (type === 'time') {
+      setCategory((prev) => ({
+        ...prev,
+        time: { value, label },
+      }));
+    }
+  };
+
+  console.log(category);
+  const detailedState = type === 'emotion' ? category.emotion : category.time;
   return (
     <StyledContainer>
       <StyledLine />
@@ -17,10 +34,10 @@ export const Category = ({ category, setCategory, categoryList }: Props) => {
       <StyledEmojiContainer>
         {categoryList.map((categoryItem) => (
           <StyledEmojiWrapper
-            onClick={() => setCategory(categoryItem.value)}
-            isSelected={category === categoryItem.value}
+            onClick={() => setDetailCategory(categoryItem.value, categoryItem.label)}
+            isSelected={detailedState.value === categoryItem.value}
           >
-            <StyledEmoji isSelected={category === categoryItem.value}>
+            <StyledEmoji isSelected={detailedState.value === categoryItem.value}>
               {categoryItem.value}
             </StyledEmoji>
             {categoryItem.label}

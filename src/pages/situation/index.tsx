@@ -2,12 +2,9 @@ import { SituationPageNavigation } from '@common/components/Navigation';
 import { Spacing } from '@common/components/Spacing';
 import styled from '@emotion/styled';
 import { theme } from '@styles/theme';
-import { useState } from 'react';
 import { Category } from '@features/Situation/components';
 
 const SituationPage = () => {
-  const [selectedEmotion, setEmotion] = useState('');
-
   const emotion1 = [
     { value: 'happiness', label: '행복' },
     { value: 'excite', label: '신남' },
@@ -20,17 +17,19 @@ const SituationPage = () => {
     { value: 'sadness', label: '슬픔' },
     { value: 'angry', label: '분노' },
   ];
-  console.log(selectedEmotion);
   return (
     <>
       <SituationPageNavigation />
       <Spacing size={1.6} />
       <StyledTitle>Feeling</StyledTitle>
       <Spacing size={3} />
-      <Category category={selectedEmotion} setCategory={setEmotion} categoryList={emotion1} />
+      <Category categoryList={emotion1} type='emotion' />
       <Spacing size={8} />
-      <Category category={selectedEmotion} setCategory={setEmotion} categoryList={emotion2} />
+      <Category categoryList={emotion2} type='emotion' />
       <Spacing size={3.6} />
+      <StyledTitle>Time</StyledTitle>
+      <Spacing size={3} />
+      <Category categoryList={emotion2} type='time' />
     </>
   );
 };
