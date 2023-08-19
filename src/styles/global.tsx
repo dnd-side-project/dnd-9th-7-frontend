@@ -13,6 +13,10 @@ const globalCss = css`
     all: unset;
     cursor: pointer;
   }
+
+  ::-webkit-scrollbar {
+    display: none;
+  }
 `;
 
 export const GlobalStyle = () => <Global styles={globalCss} />;
