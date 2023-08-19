@@ -1,6 +1,6 @@
 import { SvgIcon } from '@common/components/SvgIcon';
 import styled from '@emotion/styled';
-import { commonStyles, StyledTitle } from '@features/Record/record.style';
+import { commonStyles, StyledRequiredField, StyledTitle } from '@features/Record/record.style';
 import { CategoryContext } from '@features/Situation/CategoryContext';
 import { theme } from '@styles/theme';
 import { useContext } from 'react';
@@ -12,7 +12,9 @@ export const Situation = () => {
 
   return (
     <>
-      <StyledTitle>Situation*</StyledTitle>
+      <StyledTitle>
+        Situation<StyledRequiredField>*</StyledRequiredField>
+      </StyledTitle>
       <StyledSituation onClick={() => navigate('/situation')}>
         <div style={{ display: 'flex', justifyContent: 'space-between', width: '100%' }}>
           {category.emotion.value ? (

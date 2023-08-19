@@ -4,23 +4,33 @@ import styled from '@emotion/styled';
 import { theme } from '@styles/theme';
 import { Category } from '@features/Situation/components';
 import { emotion1, emotion2, time, weather } from '@features/Situation/categoryData';
+import { StyledRequiredField } from '@features/Record/record.style';
 
 const SituationPage = () => {
   return (
     <>
       <SituationPageNavigation />
       <Spacing size={1.6} />
-      <StyledTitle>Feeling</StyledTitle>
+      <StyledTitle>
+        Feeling
+        <StyledRequiredField>*</StyledRequiredField>
+      </StyledTitle>
       <Spacing size={3} />
       <Category categoryList={emotion1} type='emotion' />
       <Spacing size={8} />
       <Category categoryList={emotion2} type='emotion' />
       <Spacing size={8.5} />
-      <StyledTitle>Time</StyledTitle>
+      <StyledTitle>
+        Time
+        <StyledRequiredField>*</StyledRequiredField>
+      </StyledTitle>
       <Spacing size={3} />
       <Category categoryList={time} type='time' />
       <Spacing size={8.5} />
-      <StyledTitle>Weather</StyledTitle>
+      <StyledTitle>
+        Weather
+        <StyledRequiredField>*</StyledRequiredField>
+      </StyledTitle>
       <Spacing size={3} />
       <Category categoryList={weather} type='weather' />
     </>

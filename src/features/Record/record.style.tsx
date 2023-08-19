@@ -20,6 +20,7 @@ export const commonStyles = () => css`
   margin-top: 1.2rem;
   ${theme.font.medium16};
   color: ${theme.color.white};
+  cursor: pointer;
 `;
 
 export const StyledPlusButton = () => {
@@ -42,4 +43,8 @@ const StyledPlusButtonContainer = styled.button`
   color: white;
   top: 0;
   left: 0;
+`;
+
+export const StyledRequiredField = styled.span`
+  color: ${theme.color.orange};
 `;
