@@ -116,6 +116,11 @@ export const theme = {
       font-weight: 500;
       line-height: 2.6rem;
     `,
+    medium14: css`
+      font-size: 1.4rem;
+      font-weight: 500;
+      line-height: 2.2rem;
+    `,
     semibold14: css`
       font-size: 1.4rem;
       font-weight: 600;
