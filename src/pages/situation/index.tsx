@@ -17,6 +17,12 @@ const SituationPage = () => {
     { value: 'sadness', label: '슬픔' },
     { value: 'angry', label: '분노' },
   ];
+  const time = [
+    { value: 'morning', label: '아침' },
+    { value: 'lunch', label: '점심' },
+    { value: 'dinner', label: '저녁' },
+    { value: 'dawn', label: '새벽' },
+  ];
   return (
     <>
       <SituationPageNavigation />
@@ -26,10 +32,10 @@ const SituationPage = () => {
       <Category categoryList={emotion1} type='emotion' />
       <Spacing size={8} />
       <Category categoryList={emotion2} type='emotion' />
-      <Spacing size={3.6} />
+      <Spacing size={8.5} />
       <StyledTitle>Time</StyledTitle>
       <Spacing size={3} />
-      <Category categoryList={emotion2} type='time' />
+      <Category categoryList={time} type='time' />
     </>
   );
 };

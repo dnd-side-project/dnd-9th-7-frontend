@@ -36,6 +36,7 @@ export const Category = ({ type, categoryList }: Props) => {
           <StyledEmojiWrapper
             onClick={() => setDetailCategory(categoryItem.value, categoryItem.label)}
             isSelected={detailedState.value === categoryItem.value}
+            key={categoryItem.value}
           >
             <StyledEmoji isSelected={detailedState.value === categoryItem.value}>
               {categoryItem.value}
@@ -79,7 +80,7 @@ const StyledEmojiContainer = styled.div`
   display: flex;
   gap: 3.7rem;
   position: absolute;
-  transform: translateY(-30%);
+  transform: translateY(-20%);
 `;
 const StyledContainer = styled.div`
   display: flex;
