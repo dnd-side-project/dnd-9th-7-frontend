@@ -5,6 +5,7 @@ import { CategoryContext } from '@features/Situation/CategoryContext';
 import { theme } from '@styles/theme';
 import { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
+import * as Icons from '@common/components/SvgIcon/assets';
 
 export const Situation = () => {
   const { category } = useContext(CategoryContext);
@@ -20,15 +21,15 @@ export const Situation = () => {
           {category.emotion.value ? (
             <>
               <StyledCategory>
-                <SvgIcon id='musicLog' />
+                <SvgIcon id={`${category.emotion.value}_gray` as keyof typeof Icons} />
                 {category.emotion.label}
               </StyledCategory>
               <StyledCategory>
-                <SvgIcon id='musicLog' />
+                <SvgIcon id={`${category.time.value}_gray` as keyof typeof Icons} />
                 {category.time.label}
               </StyledCategory>
               <StyledCategory>
-                <SvgIcon id='musicLog' />
+                <SvgIcon id={`${category.weather.value}_gray` as keyof typeof Icons} />
                 {category.weather.label}
               </StyledCategory>
             </>

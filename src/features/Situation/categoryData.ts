@@ -8,7 +8,7 @@ export const emotion2 = [
   { value: 'empty', label: '공허' },
   { value: 'depress', label: '우울' },
   { value: 'sadness', label: '슬픔' },
-  { value: 'angry', label: '분노' },
+  { value: 'anger', label: '분노' },
 ];
 export const time = [
   { value: 'morning', label: '아침' },

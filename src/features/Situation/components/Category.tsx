@@ -1,8 +1,10 @@
 /* eslint-disable no-nested-ternary */
+import { SvgIcon } from '@common/components/SvgIcon';
 import styled from '@emotion/styled';
 import { CategoryContext } from '@features/Situation/CategoryContext';
 import { theme } from '@styles/theme';
 import { useContext } from 'react';
+import * as Icons from '@common/components/SvgIcon/assets';
 
 interface Props {
   type: 'emotion' | 'time' | 'weather';
@@ -46,7 +48,13 @@ export const Category = ({ type, categoryList }: Props) => {
             key={categoryItem.value}
           >
             <StyledEmoji isSelected={detailedState.value === categoryItem.value}>
-              {categoryItem.value}
+              <SvgIcon
+                id={
+                  `${categoryItem.value}_${
+                    detailedState.value === categoryItem.value ? 'black' : 'gray'
+                  }` as keyof typeof Icons
+                }
+              />
             </StyledEmoji>
             {categoryItem.label}
           </StyledEmojiWrapper>
