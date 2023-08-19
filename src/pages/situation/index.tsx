@@ -3,32 +3,9 @@ import { Spacing } from '@common/components/Spacing';
 import styled from '@emotion/styled';
 import { theme } from '@styles/theme';
 import { Category } from '@features/Situation/components';
+import { emotion1, emotion2, time, weather } from '@features/Situation/categoryData';
 
 const SituationPage = () => {
-  const emotion1 = [
-    { value: 'happiness', label: '행복' },
-    { value: 'excite', label: '신남' },
-    { value: 'flutter', label: '설렘' },
-    { value: 'peaceful', label: '평온' },
-  ];
-  const emotion2 = [
-    { value: 'empty', label: '공허' },
-    { value: 'depress', label: '우울' },
-    { value: 'sadness', label: '슬픔' },
-    { value: 'angry', label: '분노' },
-  ];
-  const time = [
-    { value: 'morning', label: '아침' },
-    { value: 'lunch', label: '점심' },
-    { value: 'dinner', label: '저녁' },
-    { value: 'dawn', label: '새벽' },
-  ];
-  const weather = [
-    { value: 'sunny', label: '맑음' },
-    { value: 'cloud', label: '흐림' },
-    { value: 'rain', label: '비' },
-    { value: 'snow', label: '눈' },
-  ];
   return (
     <>
       <SituationPageNavigation />
