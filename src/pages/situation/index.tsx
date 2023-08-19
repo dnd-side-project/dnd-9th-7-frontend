@@ -3,6 +3,7 @@ import { Spacing } from '@common/components/Spacing';
 import styled from '@emotion/styled';
 import { theme } from '@styles/theme';
 import { useState } from 'react';
+import { Category } from '@features/Situation/components';
 
 const SituationPage = () => {
   const [selectedEmotion, setEmotion] = useState('');
@@ -26,43 +27,10 @@ const SituationPage = () => {
       <Spacing size={1.6} />
       <StyledTitle>Feeling</StyledTitle>
       <Spacing size={3} />
-      <StyledContainer>
-        <StyledLine />
-        <StyledLine />
-        <StyledLine />
-        <StyledEmojiContainer>
-          {emotion1.map((emotion) => (
-            <StyledEmojiWrapper
-              onClick={() => setEmotion(emotion.value)}
-              isSelected={selectedEmotion === emotion.value}
-            >
-              <StyledEmoji isSelected={selectedEmotion === emotion.value}>
-                {emotion.value}
-              </StyledEmoji>
-              {emotion.label}
-            </StyledEmojiWrapper>
-          ))}
-        </StyledEmojiContainer>
-      </StyledContainer>
+      <Category category={selectedEmotion} setCategory={setEmotion} categoryList={emotion1} />
       <Spacing size={8} />
-      <StyledContainer>
-        <StyledLine />
-        <StyledLine />
-        <StyledLine />
-        <StyledEmojiContainer>
-          {emotion2.map((emotion) => (
-            <StyledEmojiWrapper
-              onClick={() => setEmotion(emotion.value)}
-              isSelected={selectedEmotion === emotion.value}
-            >
-              <StyledEmoji isSelected={selectedEmotion === emotion.value}>
-                {emotion.value}
-              </StyledEmoji>
-              {emotion.label}
-            </StyledEmojiWrapper>
-          ))}
-        </StyledEmojiContainer>
-      </StyledContainer>
+      <Category category={selectedEmotion} setCategory={setEmotion} categoryList={emotion2} />
+      <Spacing size={3.6} />
     </>
   );
 };
@@ -91,26 +59,4 @@ export const StyledEmoji = styled.div<{ isSelected: boolean }>`
   border-radius: 50rem;
   background: ${(props) => (props.isSelected ? theme.color.white : theme.color.gray12)};
   aspect-ratio: 1/1;
-`;
-
-const StyledEmojiWrapper = styled.div<{ isSelected: boolean }>`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.6rem;
-  ${theme.font.medium16}
-  color: ${(props) => (props.isSelected ? theme.color.white : theme.color.gray07)}
-`;
-
-const StyledEmojiContainer = styled.div`
-  display: flex;
-  gap: 3.7rem;
-  position: absolute;
-  transform: translateY(-30%);
-`;
-const StyledContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 1.2rem;
-  position: relative;
 `;
