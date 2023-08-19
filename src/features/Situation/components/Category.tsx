@@ -31,7 +31,6 @@ export const Category = ({ type, categoryList }: Props) => {
     }
   };
 
-  console.log(category);
   const detailedState =
     type === 'emotion' ? category.emotion : type === 'time' ? category.time : category.weather;
   return (

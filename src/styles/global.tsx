@@ -8,6 +8,11 @@ const globalCss = css`
   html {
     font-size: 62.5%;
   }
+
+  button {
+    all: unset;
+    cursor: pointer;
+  }
 `;
 
 export const GlobalStyle = () => <Global styles={globalCss} />;
