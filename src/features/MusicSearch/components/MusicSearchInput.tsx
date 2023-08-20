@@ -4,16 +4,18 @@ import { SvgIcon } from '@common/components/SvgIcon';
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 import { theme } from '@styles/theme';
-import { KeyboardEvent } from 'react';
+import { SetStateAction, KeyboardEvent, Dispatch } from 'react';
 
-export const MusicSearchInput = () => {
+interface Props {
+  setValue: Dispatch<SetStateAction<string>>;
+}
+export const MusicSearchInput = ({ setValue }: Props) => {
   const handleEnterKey = (event: KeyboardEvent<HTMLInputElement>) => {
     if (event.key === 'Enter') {
       event.preventDefault();
-      // TODO: music api 쏘는 로직 추가
+      setValue((event.target as HTMLInputElement).value);
     }
   };
-
   return (
     <StyledInput>
       <SvgIcon id='search_gray' size={24} />
