@@ -2,8 +2,8 @@
 /* eslint-disable no-empty */
 import styled from '@emotion/styled';
 import { theme } from '@styles/theme';
-import axios from 'axios';
 import { useState, useEffect } from 'react';
+import { client } from '@apis/client';
 
 interface Props {
   value: string;
@@ -17,7 +17,7 @@ export const MusicSearchList = ({ value }: Props) => {
       const offset = 1;
 
       try {
-        const response = await axios.get('/api/music', {
+        const response = await client.get('/api/music', {
           params: {
             query,
             offset,
@@ -35,7 +35,7 @@ export const MusicSearchList = ({ value }: Props) => {
   return (
     <>
       {musicDatas?.map((musicData: any) => (
-        <StyledMusicSearchItem>
+        <StyledMusicSearchItem key={musicData.id}>
           <StyledImage src={musicData?.album.images[0].url} />
           <StyleTextWrapper>
             <StyledTitle>{musicData?.artists[0].name}</StyledTitle>

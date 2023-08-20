@@ -34,7 +34,7 @@ export const getPosts = rest.get('/api/music', (req, res, ctx) =>
               ],
             },
             {
-              id: 'track01',
+              id: 'track02',
               name: 'SuperShy',
               album: {
                 id: 'album01',
