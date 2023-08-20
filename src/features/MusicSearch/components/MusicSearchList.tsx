@@ -1,16 +1,58 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable no-empty */
 import styled from '@emotion/styled';
 import { theme } from '@styles/theme';
+import axios from 'axios';
+import { useState, useEffect } from 'react';
 
-export const MusicSearchList = () => {
+interface Props {
+  value: string;
+}
+export const MusicSearchList = ({ value }: Props) => {
+  // TODO : music api react-quert 로직으로 연동하는 작업, music api 리스폰스 타입 지정
+  const [musicDatas, setMusicDatas] = useState<any>([]);
+  useEffect(() => {
+    const fetchMusicData = async () => {
+      const query = value;
+      const offset = 1;
+
+      try {
+        const response = await axios.get('/api/music', {
+          params: {
+            query,
+            offset,
+          },
+        });
+
+        const responseData = response.data[0].tracks.items;
+        setMusicDatas(responseData);
+      } catch (error) {}
+    };
+
+    fetchMusicData(); // 컴포넌트가 마운트되면 데이터를 가져오도록 실행
+  }, [value]);
+
   return (
-    <StyledMusicSearchItem>
-      <StyledImage src='https://picsum.photos/236/354' />
-      <StyleTextWrapper>
-        <StyledTitle>WOnder</StyledTitle>
-        <StyledDescription>oasis</StyledDescription>
-        <StyledDescription>2023.08.20</StyledDescription>
-      </StyleTextWrapper>
-    </StyledMusicSearchItem>
+    <>
+      {musicDatas?.map((musicData: any) => (
+        <StyledMusicSearchItem>
+          <StyledImage src={musicData?.album.images[0].url} />
+          <StyleTextWrapper>
+            <StyledTitle>{musicData?.artists[0].name}</StyledTitle>
+            <StyledDescription>{musicData?.name}</StyledDescription>
+            <StyledDescription>{musicData?.album.releaseDate}</StyledDescription>
+          </StyleTextWrapper>
+        </StyledMusicSearchItem>
+      ))}
+      <StyledMusicSearchItem>
+        <StyledImage src='https://picsum.photos/236/354' />
+        <StyleTextWrapper>
+          <StyledTitle>WOnder</StyledTitle>
+          <StyledDescription>oasis</StyledDescription>
+          <StyledDescription>2023.08.20</StyledDescription>
+        </StyleTextWrapper>
+      </StyledMusicSearchItem>
+    </>
   );
 };
 
