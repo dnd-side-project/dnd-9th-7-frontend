@@ -11,7 +11,7 @@ const PlayingSearchPage = () => {
       <PlayingSearchPageNavigation />
       <SearchInput setValue={setValue} />
       <Spacing size={3.2} />
-      <PlayingSearchList value={value} />
+      {value && <PlayingSearchList value={value} />}
     </>
   );
 };
