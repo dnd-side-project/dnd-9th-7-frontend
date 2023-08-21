@@ -1,11 +1,18 @@
 import styled from '@emotion/styled';
 import { commonStyles, StyledPlusButton, StyledTitle } from '@features/Record/record.style';
+import { useNavigate } from 'react-router-dom';
 
 export const YoutubePlay = () => {
+  const navigate = useNavigate();
+
   return (
     <>
       <StyledTitle>Youtube Play</StyledTitle>
-      <StyleYoutube>
+      <StyleYoutube
+        onClick={() => {
+          navigate('/youtubePlay');
+        }}
+      >
         <StyledPlusButton />
       </StyleYoutube>
     </>

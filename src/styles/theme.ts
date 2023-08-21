@@ -12,9 +12,9 @@ export const theme = {
     gray01: '#fcfcfc',
     gray02: '#f5f5f5',
     gray03: 'efefef',
-    gray04: 'e8e8e8',
-    gray05: 'b7b7b7',
-    gray06: '949494',
+    gray04: '#e8e8e8',
+    gray05: '#b7b7b7',
+    gray06: '#949494',
     gray07: '#777777',
     gray08: '#616161',
     gray09: '#3f3f3f',
@@ -115,6 +115,11 @@ export const theme = {
       font-size: 1.6rem;
       font-weight: 500;
       line-height: 2.6rem;
+    `,
+    medium14: css`
+      font-size: 1.4rem;
+      font-weight: 500;
+      line-height: 2.2rem;
     `,
     semibold14: css`
       font-size: 1.4rem;

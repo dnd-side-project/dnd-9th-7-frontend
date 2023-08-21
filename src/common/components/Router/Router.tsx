@@ -4,6 +4,8 @@ import Home from '@pages/index';
 import RecordPage from '@pages/record';
 import SituationPage from '@pages/situation';
 import OnboardingPage from '@pages/onboarding';
+import MusicSearchPage from '@pages/musicSearch';
+import PlayingSearchPage from '@pages/playingSearch';
 
 export const Router = () => {
   return (
@@ -11,9 +13,9 @@ export const Router = () => {
       <Route path='/' element={<Home />} />
       <Route path='/onboarding' element={<OnboardingPage />} />
       <Route path='/record' element={<RecordPage />} />
+      <Route path='/musicSearch' element={<MusicSearchPage />} />
+      <Route path='/youtubePlay' element={<PlayingSearchPage />} />
       <Route path='/situation' element={<SituationPage />} />
-      <Route path='/musicSearch' element={<SituationPage />} />
-      <Route path='/videoSearch' element={<SituationPage />} />
     </Routes>
   );
 };
