@@ -1,4 +1,3 @@
-/* eslint-disable react/button-has-type */
 import { CalendarPageFooter } from '@common/components/Footer';
 import { CalendarPageNavigation } from '@common/components/Navigation';
 import { SvgIcon } from '@common/components/SvgIcon';
@@ -13,11 +12,8 @@ const Home = () => {
   return (
     <>
       <CalendarPageNavigation />
-
       <Calendar setIsRecordListShown={setIsRecordListShown} />
-
       <RecordList isRecordListShown={isRecordListShown} />
-
       <StyledContainer>
         <div>
           <StyledDate>07</StyledDate>
@@ -27,10 +23,19 @@ const Home = () => {
         </div>
 
         <StyledRecordButton>
+          <StyledAlert>
+            <div>ADD RECORD</div>
+            <StyledCloseButton>
+              <SvgIcon id='close_white_bold' size={8} />
+            </StyledCloseButton>
+            <StyledAlertArrow>
+              <SvgIcon id='alert_arrow_orange' size={15} />
+            </StyledAlertArrow>
+          </StyledAlert>
+
           <SvgIcon id='plus_black' />
         </StyledRecordButton>
       </StyledContainer>
-
       <CalendarPageFooter />
     </>
   );
@@ -57,7 +62,7 @@ const StyledWord = styled.span`
 `;
 
 const StyledRecordButton = styled.button`
-  all: unset;
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -66,4 +71,35 @@ const StyledRecordButton = styled.button`
   width: 6.2rem;
   height: 6.2rem;
 `;
+
+const StyledAlert = styled.div`
+  position: absolute;
+  top: -6.5rem;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 13rem;
+  height: 3.6rem;
+  padding: 0 1rem;
+  background-color: ${(props) => props.theme.color.orange};
+  ${(props) => props.theme.font.semibold14}
+`;
+
+const StyledCloseButton = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 2rem;
+  aspect-ratio: 1/1;
+  background-color: rgba(255, 255, 255, 0.35);
+  border-radius: 100%;
+`;
+
+const StyledAlertArrow = styled.div`
+  position: absolute;
+  bottom: -2.1rem;
+  right: 2.3rem;
+`;
+
 export default Home;
