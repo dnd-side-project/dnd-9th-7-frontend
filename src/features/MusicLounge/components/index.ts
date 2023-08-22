@@ -1,2 +1,4 @@
-export * from './Navigation';
-export * from './BlurBackground';
+import Navigation from './Navigation';
+import Section from './Section';
+
+export { Navigation, Section };

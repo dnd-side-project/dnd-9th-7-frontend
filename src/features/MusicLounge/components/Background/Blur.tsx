@@ -4,16 +4,16 @@ interface Props {
   color: string;
 }
 
-export const BlurBackground = ({ color }: Props) => {
+const Blur = ({ color }: Props) => {
   return (
-    <StyledBlurBackground>
+    <StyledBlur>
       <StyledCircle color={color} />
-      <BlurFilter />
-    </StyledBlurBackground>
+      <StyledFilter />
+    </StyledBlur>
   );
 };
 
-const StyledBlurBackground = styled.div`
+const StyledBlur = styled.div`
   position: absolute;
   top: 0;
   left: 0;
@@ -32,7 +32,7 @@ const StyledCircle = styled.div<{ color: string }>`
   aspect-ratio: 1/1;
 `;
 
-const BlurFilter = styled.div`
+const StyledFilter = styled.div`
   position: absolute;
   top: 0;
   left: 0;
@@ -40,3 +40,5 @@ const BlurFilter = styled.div`
   height: 100%;
   backdrop-filter: blur(70px);
 `;
+
+export default Blur;
