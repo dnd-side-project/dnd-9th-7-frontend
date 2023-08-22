@@ -15,6 +15,7 @@ export { default as kakaoChat } from '@public/icons/kakaoChat.svg';
 // common 아이콘
 export { default as active_white } from '@public/icons/common/active_white.svg';
 export { default as alert_white } from '@public/icons/common/alert_white.svg';
+export { default as alert_arrow_orange } from '@public/icons/common/alert_arrow_orange.svg';
 export { default as arrow_down_white_small } from '@public/icons/common/arrow_down_white_small.svg';
 export { default as arrow_down_white } from '@public/icons/common/arrow_down_white.svg';
 export { default as arrow_left_white_small } from '@public/icons/common/arrow_left_white_small.svg';
@@ -25,6 +26,7 @@ export { default as arrow_up_white_small } from '@public/icons/common/arrow_up_w
 export { default as arrow_up_white } from '@public/icons/common/arrow_up_white.svg';
 export { default as bang_white } from '@public/icons/common/bang_white.svg';
 export { default as close_white } from '@public/icons/common/close_white.svg';
+export { default as close_white_bold } from '@public/icons/common/close_white_bold.svg';
 export { default as complete_black } from '@public/icons/common/complete_black.svg';
 export { default as delete_keyword_black } from '@public/icons/common/delete_keyword_black.svg';
 export { default as draft_list_black } from '@public/icons/common/draft_list_black.svg';
