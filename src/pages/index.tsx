@@ -2,8 +2,7 @@ import { CalendarPageFooter } from '@common/components/Footer';
 import { CalendarPageNavigation } from '@common/components/Navigation';
 import { SvgIcon } from '@common/components/SvgIcon';
 import styled from '@emotion/styled';
-import Calendar from '@features/Calendar/components/Calendnar';
-import RecordList from '@features/Calendar/components/RecordList';
+import { Calendar, RecordList } from '@features/Calendar/components';
 import { theme } from '@styles/theme';
 import { useState } from 'react';
 
