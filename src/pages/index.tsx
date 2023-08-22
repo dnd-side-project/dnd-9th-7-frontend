@@ -1,10 +1,13 @@
+/* eslint-disable react/no-unknown-property */
+/** @jsxImportSource @emotion/react */
+import { useState } from 'react';
 import { CalendarPageFooter } from '@common/components/Footer';
 import { CalendarPageNavigation } from '@common/components/Navigation';
 import { SvgIcon } from '@common/components/SvgIcon';
+import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 import { Calendar, RecordList } from '@features/Calendar/components';
 import { theme } from '@styles/theme';
-import { useState } from 'react';
 
 const Home = () => {
   const [isRecordListShown, setIsRecordListShown] = useState(false);
@@ -15,12 +18,18 @@ const Home = () => {
       <RecordList isRecordListShown={isRecordListShown} />
       <StyledContainer>
         <div
-          style={{
-            visibility: isRecordListShown ? 'hidden' : 'visible',
-          }}
+          css={css`
+            visibility: ${isRecordListShown ? 'hidden' : 'visible'};
+          `}
         >
           <StyledDate>07</StyledDate>
-          <StyledWord style={{ marginRight: '1.2rem' }}>DAY</StyledWord>
+          <StyledWord
+            css={css`
+              margin-right: 1.2rem;
+            `}
+          >
+            DAY
+          </StyledWord>
           <StyledDate>12</StyledDate>
           <StyledWord>RECORD</StyledWord>
         </div>
