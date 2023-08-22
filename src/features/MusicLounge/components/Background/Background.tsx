@@ -11,7 +11,6 @@ const Background = ({ type, title, color }: Props) => {
   return (
     <StyledBackground>
       <Blur color={color} />
-
       <StyledType>{type}</StyledType>
       <StyledTitle>
         {title}

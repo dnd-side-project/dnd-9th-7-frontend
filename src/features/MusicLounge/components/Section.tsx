@@ -11,7 +11,6 @@ const Section = ({ type, title, color }: Props) => {
   return (
     <>
       <Background type={type} title={title} color={color} />
-
       <MusicList />
     </>
   );
