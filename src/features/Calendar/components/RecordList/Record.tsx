@@ -20,8 +20,9 @@ const Record = () => {
 const StyledRecord = styled.div`
   display: flex;
   align-items: center;
-  border-top: 1px solid ${(props) => props.theme.color.gray08};
   padding: 1.2rem 1rem;
+  background-color: ${(props) => props.theme.color.black};
+  border-top: 1px solid ${(props) => props.theme.color.gray08};
 `;
 
 const StyledRecordImage = styled.div`
