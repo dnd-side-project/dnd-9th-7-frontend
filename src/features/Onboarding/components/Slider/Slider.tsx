@@ -61,7 +61,7 @@ export const Slider = () => {
 };
 
 const StyledSlider = styled(Slick)`
-  width: 100vw;
+  width: 39rem;
   aspect-ratio: 1/1;
 `;
 
