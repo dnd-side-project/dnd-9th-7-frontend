@@ -1,4 +1,4 @@
-import { useState, useCallback, useRef, Dispatch, SetStateAction } from 'react';
+import { useState, useCallback, useRef, Dispatch, SetStateAction, useEffect } from 'react';
 import styled from '@emotion/styled';
 import CalendarHeader from './CalendarHeader';
 
@@ -19,10 +19,12 @@ const Calendar = ({ setIsRecordListShown }: Props) => {
   });
   const totalDateOfMonth: number = new Date(selectedDate.year, selectedDate.month, 0).getDate(); // 선택된 달의 전체 날짜 갯수
   const firstDayOfMonth: number = new Date(selectedDate.year, selectedDate.month - 1, 1).getDay(); // 선택된 달의 시작 요일 (0: 일요일, 1: 월요일, ..., 6: 토요일)
+  const totalWeekOfMonth: number = Math.ceil((firstDayOfMonth + totalDateOfMonth) / 7); // 선택된 달의 전체 주 갯수
   const dayList = ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT'];
 
   const dateNumListFrameRef = useRef<null | HTMLDivElement>(null);
   const dateNumListRef = useRef<null | HTMLDivElement>(null);
+  const [dateNumHeight, setDateNumHeight] = useState(0); // StyledDateNum 컴포넌트의 height값
 
   /**
    * 숫자 n을 입력받아 1부터 n까지의 array를 생성해 주는 함수
@@ -46,17 +48,21 @@ const Calendar = ({ setIsRecordListShown }: Props) => {
 
       setIsRecordListShown(true);
 
-      // console.log(Math.floor((firstDayOfMonth + updatedDate - 1) / 7));
-      const upValue = Math.floor((firstDayOfMonth + updatedDate - 1) / 7) * 49;
-      // console.log(upValue);
+      const transitionValue = Math.floor((firstDayOfMonth + updatedDate - 1) / 7) * dateNumHeight;
       if (dateNumListFrameRef.current && dateNumListRef.current) {
-        dateNumListFrameRef.current.style.maxHeight = '49px';
+        dateNumListFrameRef.current.style.height = `${dateNumHeight}px`;
 
-        dateNumListRef.current.style.transform = `translateY(${-upValue}px)`;
+        dateNumListRef.current.style.transform = `translateY(${-transitionValue}px)`;
       }
     },
-    [firstDayOfMonth, setIsRecordListShown],
+    [firstDayOfMonth, setIsRecordListShown, dateNumHeight],
   );
+
+  useEffect(() => {
+    if (dateNumListRef.current) {
+      setDateNumHeight(dateNumListRef.current.children[0].clientHeight);
+    }
+  }, []);
 
   return (
     <StyledCalendar>
@@ -73,7 +79,7 @@ const Calendar = ({ setIsRecordListShown }: Props) => {
       {/* 요일 영역(SUN, MON, ... , SAT) End */}
 
       {/* 날짜 영역 Start */}
-      <StyledDateNumListFrame ref={dateNumListFrameRef}>
+      <StyledDateNumListFrame ref={dateNumListFrameRef} height={totalWeekOfMonth * dateNumHeight}>
         <StyledDateNumList ref={dateNumListRef}>
           {/* 빈 칸 */}
           {createArray1ToN(firstDayOfMonth).map((index) => (
@@ -106,7 +112,6 @@ const Calendar = ({ setIsRecordListShown }: Props) => {
 const StyledCalendar = styled.div`
   width: 100%;
   color: ${(props) => props.theme.color.white};
-  /* padding-bottom: 15rem; */
 `;
 
 const StyledDayList = styled.div`
@@ -123,11 +128,10 @@ const StyledDay = styled.div`
   justify-content: center;
 `;
 
-const StyledDateNumListFrame = styled.div`
-  max-height: 100vh;
+const StyledDateNumListFrame = styled.div<{ height: number }>`
   overflow: hidden;
-  transition: max-height 0.4s linear;
-  /* background-color: indigo; */
+  height: ${(props) => props.height}px;
+  transition: height 0.3s linear;
 `;
 
 const StyledDateNumList = styled.div`
@@ -135,7 +139,7 @@ const StyledDateNumList = styled.div`
   grid-template-columns: repeat(7, minmax(0, 1fr));
   font-size: 1.4rem;
   font-weight: 500;
-  transition: transform 0.4s linear;
+  transition: transform 0.3s linear;
 `;
 
 const StyledDateNum = styled.div<{ isSelected: boolean; isToday: boolean }>`
