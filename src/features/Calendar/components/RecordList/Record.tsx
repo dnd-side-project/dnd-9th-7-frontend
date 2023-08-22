@@ -9,6 +9,7 @@ const Record = () => {
         <StyledRecordTitle>WONDERWALL</StyledRecordTitle>
         <StyledRecordArtist>OASIS</StyledRecordArtist>
       </div>
+
       <StyledEditButton>
         <SvgIcon id='edit_vertical_white' />
       </StyledEditButton>
