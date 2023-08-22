@@ -15,7 +15,11 @@ const Home = () => {
       <Calendar setIsRecordListShown={setIsRecordListShown} />
       <RecordList isRecordListShown={isRecordListShown} />
       <StyledContainer>
-        <div>
+        <div
+          style={{
+            visibility: isRecordListShown ? 'hidden' : 'visible',
+          }}
+        >
           <StyledDate>07</StyledDate>
           <StyledWord style={{ marginRight: '1.2rem' }}>DAY</StyledWord>
           <StyledDate>12</StyledDate>
@@ -43,7 +47,7 @@ const Home = () => {
 
 // NOTE: Footer 쪽 스타일과 상당히 유사해서 하나의 컴포넌트로 뺄 수 있을 것 같음
 const StyledContainer = styled.div`
-  position: absolute;
+  position: fixed;
   bottom: 8.2rem;
   display: flex;
   justify-content: space-between;
@@ -51,6 +55,7 @@ const StyledContainer = styled.div`
   padding-left: 2.4rem;
   padding-right: 2.4rem;
   width: calc(100% - 4.8rem);
+  max-width: 35.2rem;
 `;
 const StyledDate = styled.span`
   ${theme.font.bold32}
