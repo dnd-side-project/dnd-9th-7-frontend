@@ -8,7 +8,7 @@ const Calendar = () => {
     month: new Date().getMonth() + 1,
     date: new Date().getDate(),
   };
-  const [selectedDate, setSelectedDate] = useState<{ year: number, month: number, date: number }>({
+  const [selectedDate, setSelectedDate] = useState<{ year: number; month: number; date: number }>({
     year: today.year,
     month: today.month,
     date: today.date,
@@ -65,9 +65,9 @@ const Calendar = () => {
 
       setIsRecordListShown(true);
 
-      //   console.log(Math.floor((firstDayOfMonth + updatedDate - 1) / 7));
+      // console.log(Math.floor((firstDayOfMonth + updatedDate - 1) / 7));
       const upValue = Math.floor((firstDayOfMonth + updatedDate - 1) / 7) * 49;
-      //   console.log(upValue);
+      // console.log(upValue);
       if (dateNumListFrameRef.current && dateNumListRef.current) {
         dateNumListFrameRef.current.style.maxHeight = '49px';
 
@@ -76,6 +76,29 @@ const Calendar = () => {
     },
     [firstDayOfMonth],
   );
+
+  // // drag & drop
+  // const [touchY, setTouchY] = useState(0);
+
+  // const onTouchStart = (e: React.TouchEvent<HTMLDivElement>) => {
+  //   setTouchY(e.changedTouches[0].pageY);
+  // };
+
+  // const onTouchEnd = (e: React.TouchEvent<HTMLDivElement>) => {
+  //   const distanceY = touchY - e.changedTouches[0].pageY;
+  //   console.log(distanceY);
+  //   // const targetUl = e.target.closest('ul');
+  //   // const targetUlWidth = targetUl.offsetWidth / 2;
+  //   // const newLeft = Math.abs(parseFloat(targetUl.style.left)) + distanceY;
+
+  //   // if (newLeft < 0) {
+  //   //   targetUl.style.left = '0px';
+  //   // } else if (newLeft < targetUlWidth) {
+  //   //   targetUl.style.left = `-${newLeft}px`;
+  //   // } else {
+  //   //   targetUl.style.left = `-${targetUlWidth}px`;
+  //   // }
+  // };
 
   return (
     <StyledCalendar>
@@ -143,6 +166,8 @@ const Calendar = () => {
             initial='invisible'
             animate='visible'
             exit='exit'
+            // onTouchStart={(e) => onTouchStart(e)}
+            // onTouchEnd={(e) => onTouchEnd(e)}
           >
             {[0, 1, 2].map((record: number) => (
               <StyledRecord key={record}>
@@ -218,10 +243,7 @@ const StyledDateNumList = styled.div`
   transition: transform 0.4s linear;
 `;
 
-const StyledDateNum =
-  styled.div <
-  { isSelected: boolean, isToday: boolean } >
-  `
+const StyledDateNum = styled.div<{ isSelected: boolean; isToday: boolean }>`
   display: flex;
   justify-content: center;
   align-items: center;
