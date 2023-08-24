@@ -49,6 +49,7 @@ const StyledRecordImage = styled.img`
   width: 6rem;
   height: 7.6rem;
   flex-shrink: 0;
+  cursor: pointer;
 `;
 
 const StyledRecordContainer = styled.section`
