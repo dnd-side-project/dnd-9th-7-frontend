@@ -18,7 +18,7 @@ export const Router = () => {
       <Route path='/music-search' element={<MusicSearchPage />} />
       <Route path='/youtube-play' element={<PlayingSearchPage />} />
       <Route path='/situation' element={<SituationPage />} />
-      <Route path='/viewRecord' element={<ViewRecordPage />} />
+      <Route path='/view-record' element={<ViewRecordPage />} />
       <Route path='/music-lounge' element={<MusicLoungePage />} />
     </Routes>
   );

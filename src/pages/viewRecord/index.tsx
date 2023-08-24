@@ -1,10 +1,5 @@
 /* eslint-disable no-nested-ternary */
-import {
-  ViewRecordPageFooter,
-  Music,
-  Record,
-  ViewRecordPageNavigation,
-} from '@features/ViewRecord/components';
+import { Navigation, Music, Record, Footer } from '@features/ViewRecord/components';
 import { useState } from 'react';
 import { ViewRecordTab } from 'src/types';
 
@@ -12,7 +7,7 @@ const ViewRecordPage = () => {
   const [selectedTab, setSelectedTab] = useState<ViewRecordTab>('music');
   return (
     <>
-      <ViewRecordPageNavigation />
+      <Navigation />
       {selectedTab === 'music' ? (
         <Music />
       ) : selectedTab === 'record' ? (
@@ -20,7 +15,7 @@ const ViewRecordPage = () => {
       ) : (
         <div>play</div>
       )}
-      <ViewRecordPageFooter selectedTab={selectedTab} setSelectedTab={setSelectedTab} />
+      <Footer selectedTab={selectedTab} setSelectedTab={setSelectedTab} />
     </>
   );
 };

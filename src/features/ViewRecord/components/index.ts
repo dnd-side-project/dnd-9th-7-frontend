@@ -1,4 +1,4 @@
-export * from './ViewRecordPageFooter';
+export * from './Footer';
 export * from './Music';
-export * from './ViewRecordPageNavigaton';
+export * from './Navigation';
 export * from './Record';
