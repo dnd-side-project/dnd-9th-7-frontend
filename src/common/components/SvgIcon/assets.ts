@@ -41,6 +41,7 @@ export { default as music_lounge_white } from '@public/icons/common/music_lounge
 export { default as my_playlist_gray } from '@public/icons/common/my_playlist_gray.svg';
 export { default as my_playlist_white } from '@public/icons/common/my_playlist_white.svg';
 export { default as note_white } from '@public/icons/common/note_white.svg';
+export { default as photo_black } from '@public/icons/common/photo_black.svg';
 export { default as photo_gray } from '@public/icons/common/photo_gray.svg';
 export { default as pin_white } from '@public/icons/common/pin_white.svg';
 export { default as plus_black } from '@public/icons/common/plus_black.svg';
@@ -49,6 +50,7 @@ export { default as search_gray } from '@public/icons/common/search_gray.svg';
 export { default as share_white } from '@public/icons/common/share_white.svg';
 export { default as trash_gray } from '@public/icons/common/trash_gray.svg';
 export { default as trash_orange } from '@public/icons/common/trash_orange.svg';
+export { default as trash_red } from '@public/icons/common/trash_red.svg';
 
 // emotion 아이콘
 export { default as anger_black } from '@public/icons/emotions/anger_black.svg';
