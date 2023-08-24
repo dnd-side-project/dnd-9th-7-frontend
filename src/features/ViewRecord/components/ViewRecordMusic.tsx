@@ -12,9 +12,14 @@ export const ViewRecordMusic = () => {
       <div style={{ position: 'absolute', top: '26rem', backgroundColor: 'yellow' }}>
         <SvgIcon id='cover' size={342} />
       </div>
-      <Spacing size={20} />
-      <StyledTag>운정 캠핑장</StyledTag>
-      <Spacing size={2} />
+      <Spacing size={15} />
+      <StyledTagWrapper>
+        <StyledTag>
+          <SvgIcon id='place' />
+          운정 캠핑장
+        </StyledTag>
+      </StyledTagWrapper>
+      <Spacing size={10} />
     </>
   );
 };
@@ -47,11 +52,18 @@ const StyledDate2 = styled.span`
 `;
 
 const StyledTag = styled.div`
-  display: inline-flex;
+  display: flex;
   padding: 0.6rem 1.2rem 0.6rem 0.8rem;
-  flex-direction: column;
-  justify-content: center;
+  justify-content: left;
   align-items: flex-start;
   gap: 1rem;
-  background-color: ${theme.color.gray04};
+  background: linear-gradient(270deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.25) 100%);
+  color: ${theme.color.gray03};
+  ${theme.font.medium16}
+`;
+
+const StyledTagWrapper = styled.div`
+  display: flex;
+  justify-content: left;
+  width: 100%;
 `;

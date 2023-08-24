@@ -5,11 +5,11 @@ export const ViewRecordPageNavigation = () => {
   return (
     <Navigation>
       <Navigation.Left>
-        <SvgIcon id='leftArrow' />
+        <SvgIcon id='leftArrow' size={24} />
       </Navigation.Left>
       <Navigation.Center />
       <Navigation.Right>
-        <SvgIcon id='leftArrow' />
+        <SvgIcon id='edit_horizontal_white' size={24} />
       </Navigation.Right>
     </Navigation>
   );
