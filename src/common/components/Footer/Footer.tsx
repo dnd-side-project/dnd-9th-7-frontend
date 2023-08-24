@@ -9,6 +9,7 @@ export const Footer = ({ children }: PropsWithChildren) => {
 const FooterLeft = ({ children }: PropsWithChildren) => (
   <StyledFooterLeft>{children}</StyledFooterLeft>
 );
+
 const FooterRight = ({ children }: PropsWithChildren) => (
   <StyledFooterRight>{children}</StyledFooterRight>
 );
@@ -18,11 +19,12 @@ const FooterCenter = ({ children }: PropsWithChildren) => (
 );
 
 const StyledFooter = styled.footer`
-  position: sticky;
+  position: fixed;
   height: 5.8rem;
-  width: calc(100% + 4.8rem);
+  width: 100%;
+  max-width: calc(34.2rem + 4.8rem);
   bottom: 0;
-  z-index: 10;
+  z-index: 99;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   background-color: ${theme.color.gray12};
@@ -45,6 +47,7 @@ const StyledFooterCenter = styled.div`
   grid-auto-flow: column;
   place-items: center;
 `;
+
 Footer.Left = FooterLeft;
 Footer.Right = FooterRight;
 Footer.Center = FooterCenter;
