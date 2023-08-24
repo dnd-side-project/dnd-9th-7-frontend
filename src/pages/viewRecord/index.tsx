@@ -5,8 +5,8 @@ import {
   ViewRecordPageNavigation,
 } from '@features/ViewRecord/components';
 import { useState } from 'react';
+import { ViewRecordTab } from 'src/types';
 
-type ViewRecordTab = 'music' | 'record' | 'play';
 const ViewRecordPage = () => {
   const [selectedTab, setSelectedTab] = useState<ViewRecordTab>('music');
   return (
@@ -19,7 +19,7 @@ const ViewRecordPage = () => {
       ) : (
         <div>play</div>
       )}
-      <ViewRecordPageFooter />
+      <ViewRecordPageFooter selectedTab={selectedTab} setSelectedTab={setSelectedTab} />
     </>
   );
 };
