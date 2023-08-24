@@ -3,7 +3,7 @@ import { theme } from '@styles/theme';
 import { SvgIcon } from '@common/components/SvgIcon';
 import { Spacing } from '@common/components/Spacing';
 
-export const ViewRecordMusic = () => {
+export const Music = () => {
   return (
     <>
       <StyledDate1>2023.01</StyledDate1>
