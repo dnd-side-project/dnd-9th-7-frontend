@@ -1,6 +1,7 @@
 /* eslint-disable react/no-unknown-property */
 /** @jsxImportSource @emotion/react */
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { CalendarPageFooter } from '@common/components/Footer';
 import { CalendarPageNavigation } from '@common/components/Navigation';
 import { SvgIcon } from '@common/components/SvgIcon';
@@ -45,7 +46,9 @@ const Home = () => {
             </StyledAlertArrow>
           </StyledAlert>
 
-          <SvgIcon id='plus_black' />
+          <Link to='/record'>
+            <SvgIcon id='plus_black' />
+          </Link>
         </StyledRecordButton>
       </StyledContainer>
       <CalendarPageFooter />

@@ -5,13 +5,13 @@ export const CalendarPageFooter = () => {
   return (
     <Footer>
       <Footer.Left>
-        <SvgIcon id='musicLog' />
+        <SvgIcon id='music_lounge_gray' />
       </Footer.Left>
       <Footer.Center>
-        <SvgIcon id='musicLounge' />
+        <SvgIcon id='music_log_white' />
       </Footer.Center>
       <Footer.Right>
-        <SvgIcon id='myPlaylist' />
+        <SvgIcon id='my_playlist_gray' />
       </Footer.Right>
     </Footer>
   );
