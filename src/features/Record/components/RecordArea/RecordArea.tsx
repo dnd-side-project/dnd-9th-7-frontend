@@ -7,8 +7,8 @@ import styled from '@emotion/styled';
 import { commonStyles, StyledTitle } from '@features/Record/record.style';
 import { theme } from '@styles/theme';
 import { useState } from 'react';
-import { RecordAreaImage } from '@features/Record/RecordArea/RecordAreaImage';
 import { Spacing } from '@common/components/Spacing';
+import { RecordAreaImage } from './RecordAreaImage';
 
 /**
  * TODO : textarea 끝에서부터 입력하는 방법 더 찾아보기
