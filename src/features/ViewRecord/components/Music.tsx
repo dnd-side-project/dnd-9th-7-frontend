@@ -69,7 +69,7 @@ const StyleCDInfo = styled.div`
   top: 26rem;
   width: calc(100% - 12rem);
   aspect-ratio: 1/1;
-  background-image: url('/img/record.png');
+  background-image: url('/images/record.png');
 `;
 
 const StyledCD = styled.div`
