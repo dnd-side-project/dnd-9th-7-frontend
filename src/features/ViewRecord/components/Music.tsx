@@ -1,17 +1,40 @@
+/* eslint-disable react/no-unknown-property */
+/** @jsxImportSource @emotion/react */
+
 import styled from '@emotion/styled';
 import { theme } from '@styles/theme';
 import { SvgIcon } from '@common/components/SvgIcon';
 import { Spacing } from '@common/components/Spacing';
 
 export const Music = () => {
+  const tagArray = ['평온', '저녁', '맑음'];
   return (
     <>
       <StyledDate1>2023.01</StyledDate1>
       <StyledDate2>06</StyledDate2>
       <StyledCD />
-      <div style={{ position: 'absolute', top: '26rem', backgroundColor: 'yellow' }}>
-        <SvgIcon id='cover' size={342} />
-      </div>
+      <StyleCDInfo>
+        <Spacing size={12} />
+        <span css={theme.font.bold20}>Oasis</span>
+        <span css={theme.font.bold32}>WonderAll</span>
+        <Spacing size={3.6} />
+        <StyledLine />
+        <Spacing size={3.6} />
+        <StyleEmojiContainer>
+          {tagArray.map((tag) => (
+            <div
+              css={{
+                display: 'flex',
+                gap: '0.8rem',
+              }}
+            >
+              <SvgIcon id='happiness_white' size={26} />
+              <span>{tag}</span>
+            </div>
+          ))}
+        </StyleEmojiContainer>
+        <Spacing size={4.4} />
+      </StyleCDInfo>
       <Spacing size={15} />
       <StyledTagWrapper>
         <StyledTag>
@@ -23,6 +46,31 @@ export const Music = () => {
     </>
   );
 };
+
+const StyleEmojiContainer = styled.div`
+  display: flex;
+  width: 100%;
+  ${theme.font.medium16}
+  justify-content: space-between;
+`;
+const StyledLine = styled.span`
+  width: 100%;
+  height: 0.1rem;
+  background-color: ${theme.color.transparency02};
+`;
+const StyleCDInfo = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+  justify-content: center;
+  position: absolute;
+  padding-left: 3.6rem;
+  padding-right: 3.6rem;
+  top: 26rem;
+  width: calc(100% - 12rem);
+  aspect-ratio: 1/1;
+  background-image: url('/img/record.png');
+`;
 
 const StyledCD = styled.div`
   border-radius: 50rem;

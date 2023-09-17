@@ -35,14 +35,14 @@ export const Record = () => {
 };
 
 const StyledrRecordAreaContainer = styled.div<{ imageUrl: string }>`
-  width: 100%;
-  height: 48rem;
+  padding: 3.6rem;
+  height: 41rem;
   background-size: 'cover';
   background-image: ${({ imageUrl }) => `url(${imageUrl})`};
   ${theme.font.medium16}
   color: ${theme.color.white};
   display: flex;
-  align-items: center;
+  align-items: end;
 `;
 
 const StyledRecordImage = styled.img`
