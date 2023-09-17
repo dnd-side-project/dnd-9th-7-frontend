@@ -1,9 +1,9 @@
 import { SvgIcon } from '@common/components/SvgIcon';
 import styled from '@emotion/styled';
 
-const Record = () => {
+const Record = ({ ...rest }) => {
   return (
-    <StyledRecord>
+    <StyledRecord {...rest}>
       <StyledRecordImage />
       <div>
         <StyledRecordTitle>WONDERWALL</StyledRecordTitle>

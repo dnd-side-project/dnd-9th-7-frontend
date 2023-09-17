@@ -10,7 +10,7 @@ export const Music = () => {
   return (
     <>
       <StyledTitle>Music*</StyledTitle>
-      <StyledCD onClick={() => navigate('/musicSearch')}>
+      <StyledCD onClick={() => navigate('/music-search')}>
         <StyledPlusButton />
       </StyledCD>
     </>

@@ -6,6 +6,7 @@ import SituationPage from '@pages/situation';
 import OnboardingPage from '@pages/onboarding';
 import MusicSearchPage from '@pages/musicSearch';
 import PlayingSearchPage from '@pages/playingSearch';
+import ViewRecordPage from '@pages/viewRecord';
 import MusicLoungePage from '@pages/musicLounge';
 
 export const Router = () => {
@@ -17,6 +18,7 @@ export const Router = () => {
       <Route path='/music-search' element={<MusicSearchPage />} />
       <Route path='/youtube-play' element={<PlayingSearchPage />} />
       <Route path='/situation' element={<SituationPage />} />
+      <Route path='/view-record' element={<ViewRecordPage />} />
       <Route path='/music-lounge' element={<MusicLoungePage />} />
     </Routes>
   );
