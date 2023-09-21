@@ -19,7 +19,22 @@ const Record = () => {
         </StyledEditButton>
       </StyledRecord>
 
-      <BottomSheet open={open} onClose={onClose} />
+      <BottomSheet
+        open={open}
+        onClose={onClose}
+        menuList={[
+          {
+            id: 0,
+            iconId: 'photo_black',
+            text: '대표 이미지로 설정하기',
+          },
+          {
+            id: 1,
+            iconId: 'trash_red',
+            text: '기록 삭제하기',
+          },
+        ]}
+      />
     </>
   );
 };

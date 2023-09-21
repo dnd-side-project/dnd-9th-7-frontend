@@ -1,14 +1,16 @@
-import { useEffect } from 'react';
+import { useEffect, MouseEventHandler } from 'react';
+import type { IconIdType } from '@common/components/SvgIcon';
 import { SvgIcon } from '@common/components/SvgIcon';
 import styled from '@emotion/styled';
 import { AnimatePresence, motion } from 'framer-motion';
 
 interface Props {
   open: boolean;
-  onClose: React.MouseEventHandler<HTMLElement>;
+  onClose: MouseEventHandler<HTMLElement>;
+  menuList: { id: number; iconId: IconIdType; text: string }[];
 }
 
-const BottomSheet = ({ open, onClose }: Props) => {
+const BottomSheet = ({ open, onClose, menuList }: Props) => {
   useEffect(() => {
     if (document) {
       document.body.style.overflow = open ? 'hidden' : 'auto';
@@ -27,14 +29,12 @@ const BottomSheet = ({ open, onClose }: Props) => {
           >
             <StyledBar />
 
-            <StyledMenu>
-              <SvgIcon id='photo_black' />
-              <StyledText color='black'>대표 이미지로 설정하기</StyledText>
-            </StyledMenu>
-            <StyledMenu>
-              <SvgIcon id='trash_red' />
-              <StyledText color='red'>기록 삭제하기</StyledText>
-            </StyledMenu>
+            {menuList.map((menu) => (
+              <StyledMenu key={menu.id}>
+                <SvgIcon id={menu.iconId} />
+                <StyledText color='black'>{menu.text}</StyledText>
+              </StyledMenu>
+            ))}
           </StyledBottomSheet>
         </StyledContainer>
       )}
