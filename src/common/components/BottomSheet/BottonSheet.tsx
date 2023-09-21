@@ -3,6 +3,8 @@ import type { IconIdType } from '@common/components/SvgIcon';
 import { SvgIcon } from '@common/components/SvgIcon';
 import styled from '@emotion/styled';
 import { AnimatePresence, motion } from 'framer-motion';
+import { Toast } from '@common/components/Toast';
+import { useOpen } from '@common/hooks';
 
 interface Props {
   isBottomSheet: boolean;
@@ -10,38 +12,49 @@ interface Props {
   menuList: { iconId: IconIdType; text: string }[];
 }
 
-const BottomSheet = ({ isBottomSheet, closeBottomSheet, menuList }: Props) => {
+export const BottomSheet = ({ isBottomSheet, closeBottomSheet, menuList }: Props) => {
+  const { open: isToast, onOpen: openToast, onClose: closeToast } = useOpen();
+
   useEffect(() => {
     if (document) {
       document.body.style.overflow = isBottomSheet ? 'hidden' : 'auto';
     }
   }, [isBottomSheet]);
   return (
-    <AnimatePresence>
-      {isBottomSheet && (
-        <StyledContainer>
-          <StyledOverlay onClick={closeBottomSheet} />
-          <StyledBottomSheet
-            variants={bottomSheetVariants}
-            initial='invisible'
-            animate='visible'
-            exit='exit'
-          >
-            <StyledBar />
+    <>
+      <AnimatePresence>
+        {isBottomSheet && (
+          <StyledContainer>
+            <StyledOverlay onClick={closeBottomSheet} />
+            <StyledBottomSheet
+              variants={bottomSheetVariants}
+              initial='invisible'
+              animate='visible'
+              exit='exit'
+            >
+              <StyledBar />
 
-            <StyledMenu>
-              <SvgIcon id={menuList[0].iconId} />
-              <StyledText color='black'>{menuList[0].text}</StyledText>
-            </StyledMenu>
+              <StyledMenu onClick={closeBottomSheet}>
+                <SvgIcon id={menuList[0].iconId} />
+                <StyledText color='black'>{menuList[0].text}</StyledText>
+              </StyledMenu>
 
-            <StyledMenu>
-              <SvgIcon id={menuList[1].iconId} />
-              <StyledText color='red'>{menuList[1].text}</StyledText>
-            </StyledMenu>
-          </StyledBottomSheet>
-        </StyledContainer>
-      )}
-    </AnimatePresence>
+              <StyledMenu
+                onClick={(e) => {
+                  closeBottomSheet(e);
+                  openToast();
+                }}
+              >
+                <SvgIcon id={menuList[1].iconId} />
+                <StyledText color='red'>{menuList[1].text}</StyledText>
+              </StyledMenu>
+            </StyledBottomSheet>
+          </StyledContainer>
+        )}
+      </AnimatePresence>
+
+      <Toast isToast={isToast} closeToast={closeToast} />
+    </>
   );
 };
 
@@ -109,5 +122,3 @@ const bottomSheetVariants = {
     transform: 'translateY(14.4rem)',
   },
 };
-
-export default BottomSheet;

@@ -1,10 +1,11 @@
-import BottomSheet from '@common/components/BottomSheet';
+import { BottomSheet } from '@common/components/BottomSheet';
 import { SvgIcon } from '@common/components/SvgIcon';
 import { useOpen } from '@common/hooks';
 import styled from '@emotion/styled';
 
 const Record = () => {
   const { open: isBottomSheet, onOpen: openBottomSheet, onClose: closeBottomSheet } = useOpen();
+
   return (
     <>
       <StyledRecord>
