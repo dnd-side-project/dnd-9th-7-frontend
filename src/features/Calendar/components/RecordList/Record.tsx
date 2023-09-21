@@ -4,7 +4,7 @@ import { useOpen } from '@common/hooks';
 import styled from '@emotion/styled';
 
 const Record = () => {
-  const { open, onOpen, onClose } = useOpen();
+  const { open: isBottomSheet, onOpen: openBottomSheet, onClose: closeBottomSheet } = useOpen();
   return (
     <>
       <StyledRecord>
@@ -15,21 +15,19 @@ const Record = () => {
         </div>
 
         <StyledEditButton>
-          <SvgIcon id='edit_vertical_white' onClick={onOpen} />
+          <SvgIcon id='edit_vertical_white' onClick={openBottomSheet} />
         </StyledEditButton>
       </StyledRecord>
 
       <BottomSheet
-        open={open}
-        onClose={onClose}
+        isBottomSheet={isBottomSheet}
+        closeBottomSheet={closeBottomSheet}
         menuList={[
           {
-            id: 0,
             iconId: 'photo_black',
             text: '대표 이미지로 설정하기',
           },
           {
-            id: 1,
             iconId: 'trash_red',
             text: '기록 삭제하기',
           },

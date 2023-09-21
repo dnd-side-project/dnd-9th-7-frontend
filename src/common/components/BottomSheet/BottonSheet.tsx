@@ -5,22 +5,22 @@ import styled from '@emotion/styled';
 import { AnimatePresence, motion } from 'framer-motion';
 
 interface Props {
-  open: boolean;
-  onClose: MouseEventHandler<HTMLElement>;
-  menuList: { id: number; iconId: IconIdType; text: string }[];
+  isBottomSheet: boolean;
+  closeBottomSheet: MouseEventHandler<HTMLElement>;
+  menuList: { iconId: IconIdType; text: string }[];
 }
 
-const BottomSheet = ({ open, onClose, menuList }: Props) => {
+const BottomSheet = ({ isBottomSheet, closeBottomSheet, menuList }: Props) => {
   useEffect(() => {
     if (document) {
-      document.body.style.overflow = open ? 'hidden' : 'auto';
+      document.body.style.overflow = isBottomSheet ? 'hidden' : 'auto';
     }
-  }, [open]);
+  }, [isBottomSheet]);
   return (
     <AnimatePresence>
-      {open && (
+      {isBottomSheet && (
         <StyledContainer>
-          <StyledOverlay onClick={onClose} />
+          <StyledOverlay onClick={closeBottomSheet} />
           <StyledBottomSheet
             variants={bottomSheetVariants}
             initial='invisible'
@@ -29,12 +29,15 @@ const BottomSheet = ({ open, onClose, menuList }: Props) => {
           >
             <StyledBar />
 
-            {menuList.map((menu) => (
-              <StyledMenu key={menu.id}>
-                <SvgIcon id={menu.iconId} />
-                <StyledText color='black'>{menu.text}</StyledText>
-              </StyledMenu>
-            ))}
+            <StyledMenu>
+              <SvgIcon id={menuList[0].iconId} />
+              <StyledText color='black'>{menuList[0].text}</StyledText>
+            </StyledMenu>
+
+            <StyledMenu>
+              <SvgIcon id={menuList[1].iconId} />
+              <StyledText color='red'>{menuList[1].text}</StyledText>
+            </StyledMenu>
           </StyledBottomSheet>
         </StyledContainer>
       )}
