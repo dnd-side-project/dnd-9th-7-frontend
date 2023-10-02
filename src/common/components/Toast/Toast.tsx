@@ -4,19 +4,19 @@ import { AnimatePresence, motion } from 'framer-motion';
 import { useEffect } from 'react';
 
 interface Props {
-  isToast: boolean;
+  isToastOpen: boolean;
   closeToast: () => void;
 }
 
-export const Toast = ({ isToast, closeToast }: Props) => {
+export const Toast = ({ isToastOpen, closeToast }: Props) => {
   useEffect(() => {
-    if (isToast) {
+    if (isToastOpen) {
       setTimeout(closeToast, 3000);
     }
-  }, [isToast, closeToast]);
+  }, [isToastOpen, closeToast]);
   return (
     <AnimatePresence>
-      {isToast && (
+      {isToastOpen && (
         <StyledToast variants={toastVariants} initial='invisible' animate='visible' exit='exit'>
           <StyledIcon>
             <SvgIcon id='complete_black' />

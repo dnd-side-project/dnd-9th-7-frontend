@@ -4,7 +4,7 @@ import { useOpen } from '@common/hooks';
 import styled from '@emotion/styled';
 
 const Record = () => {
-  const { open: isBottomSheet, onOpen: openBottomSheet, onClose: closeBottomSheet } = useOpen();
+  const { open: isBottomSheetOpen, onOpen: openBottomSheet, onClose: closeBottomSheet } = useOpen();
 
   return (
     <>
@@ -21,7 +21,7 @@ const Record = () => {
       </StyledRecord>
 
       <BottomSheet
-        isBottomSheet={isBottomSheet}
+        isBottomSheetOpen={isBottomSheetOpen}
         closeBottomSheet={closeBottomSheet}
         menuList={[
           {

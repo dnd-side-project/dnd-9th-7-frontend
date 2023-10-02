@@ -7,23 +7,23 @@ import { Toast } from '@common/components/Toast';
 import { useOpen } from '@common/hooks';
 
 interface Props {
-  isBottomSheet: boolean;
+  isBottomSheetOpen: boolean;
   closeBottomSheet: MouseEventHandler<HTMLElement>;
   menuList: { iconId: IconIdType; text: string }[];
 }
 
-export const BottomSheet = ({ isBottomSheet, closeBottomSheet, menuList }: Props) => {
-  const { open: isToast, onOpen: openToast, onClose: closeToast } = useOpen();
+export const BottomSheet = ({ isBottomSheetOpen, closeBottomSheet, menuList }: Props) => {
+  const { open: isToastOpen, onOpen: openToast, onClose: closeToast } = useOpen();
 
   useEffect(() => {
     if (document) {
-      document.body.style.overflow = isBottomSheet ? 'hidden' : 'auto';
+      document.body.style.overflow = isBottomSheetOpen ? 'hidden' : 'auto';
     }
-  }, [isBottomSheet]);
+  }, [isBottomSheetOpen]);
   return (
     <>
       <AnimatePresence>
-        {isBottomSheet && (
+        {isBottomSheetOpen && (
           <StyledContainer>
             <StyledOverlay onClick={closeBottomSheet} />
             <StyledBottomSheet
@@ -53,7 +53,7 @@ export const BottomSheet = ({ isBottomSheet, closeBottomSheet, menuList }: Props
         )}
       </AnimatePresence>
 
-      <Toast isToast={isToast} closeToast={closeToast} />
+      <Toast isToastOpen={isToastOpen} closeToast={closeToast} />
     </>
   );
 };
