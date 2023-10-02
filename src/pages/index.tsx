@@ -2,19 +2,17 @@
 /** @jsxImportSource @emotion/react */
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { CalendarPageFooter } from '@common/components/Footer';
-import { CalendarPageNavigation } from '@common/components/Navigation';
 import { SvgIcon } from '@common/components/SvgIcon';
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
-import { Calendar, RecordList } from '@features/Calendar/components';
+import { Calendar, RecordList, Footer, Navigation } from '@features/Calendar/components';
 import { theme } from '@styles/theme';
 
 const Home = () => {
   const [isRecordListShown, setIsRecordListShown] = useState(false);
   return (
     <>
-      <CalendarPageNavigation />
+      <Navigation />
       <Calendar setIsRecordListShown={setIsRecordListShown} />
       <RecordList isRecordListShown={isRecordListShown} />
       <StyledContainer>
@@ -51,7 +49,7 @@ const Home = () => {
           </Link>
         </StyledRecordButton>
       </StyledContainer>
-      <CalendarPageFooter />
+      <Footer />
     </>
   );
 };

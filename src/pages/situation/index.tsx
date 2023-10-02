@@ -1,15 +1,14 @@
-import { SituationPageNavigation } from '@common/components/Navigation';
 import { Spacing } from '@common/components/Spacing';
 import styled from '@emotion/styled';
 import { theme } from '@styles/theme';
-import { Category } from '@features/Situation/components';
+import { Category, Navigation } from '@features/Situation/components';
 import { emotion1, emotion2, time, weather } from '@features/Situation/categoryData';
 import { StyledRequiredField } from '@features/Record/record.style';
 
 const SituationPage = () => {
   return (
     <>
-      <SituationPageNavigation />
+      <Navigation />
       <Spacing size={1.6} />
       <StyledTitle>
         Feeling

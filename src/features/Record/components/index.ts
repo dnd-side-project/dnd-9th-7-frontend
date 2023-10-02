@@ -5,3 +5,5 @@ export * from './RecordArea';
 export * from './YoutubePlay';
 export * from './Date';
 export * from './Situation';
+export * from './Footer';
+export * from './Navigation';
