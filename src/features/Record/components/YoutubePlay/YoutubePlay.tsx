@@ -10,7 +10,7 @@ export const YoutubePlay = () => {
       <StyledTitle>Youtube Play</StyledTitle>
       <StyleYoutube
         onClick={() => {
-          navigate('/youtubePlay');
+          navigate('/youtube-play');
         }}
       >
         <StyledPlusButton />

@@ -2,7 +2,7 @@
 /* eslint-disable @typescript-eslint/no-unused-expressions */
 /* eslint-disable no-alert */
 /** @jsxImportSource @emotion/react */
-import { Navigation } from '@common/components/Navigation';
+import { Navigation as SituationPageNavigation } from '@common/components/Navigation';
 import { SvgIcon } from '@common/components/SvgIcon';
 import { css } from '@emotion/react';
 import { CategoryContext } from '@features/Situation/CategoryContext';
@@ -10,7 +10,7 @@ import { theme } from '@styles/theme';
 import { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-export const SituationPageNavigation = () => {
+export const Navigation = () => {
   const navigate = useNavigate();
   const { category } = useContext(CategoryContext);
 
@@ -21,16 +21,16 @@ export const SituationPageNavigation = () => {
     isAllCategoriesSelected ? navigate('/record') : alert('필수값을 입력하세요');
   };
   return (
-    <Navigation>
-      <Navigation.Left>
+    <SituationPageNavigation>
+      <SituationPageNavigation.Left>
         <button>
           <SvgIcon id='leftArrow' onClick={() => navigate(-1)} />
         </button>
-      </Navigation.Left>
-      <Navigation.Center>
+      </SituationPageNavigation.Left>
+      <SituationPageNavigation.Center>
         <span>상황선택</span>
-      </Navigation.Center>
-      <Navigation.Right>
+      </SituationPageNavigation.Center>
+      <SituationPageNavigation.Right>
         <button
           onClick={handleSubmitCategory}
           css={css`
@@ -39,7 +39,7 @@ export const SituationPageNavigation = () => {
         >
           완료
         </button>
-      </Navigation.Right>
-    </Navigation>
+      </SituationPageNavigation.Right>
+    </SituationPageNavigation>
   );
 };

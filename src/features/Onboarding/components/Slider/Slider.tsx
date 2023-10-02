@@ -32,7 +32,7 @@ export const Slider = () => {
           </StyledHeaderSubTitle>
         </StyledHeader>
 
-        <StyledGraphic>1</StyledGraphic>
+        <StyledGraphic alt='Onboarding Graphic 1' src='images/onboarding_graphic_1.png' />
       </>
 
       <>
@@ -43,7 +43,7 @@ export const Slider = () => {
           </StyledHeaderSubTitle>
         </StyledHeader>
 
-        <StyledGraphic>2</StyledGraphic>
+        <StyledGraphic alt='Onboarding Graphic 1' src='images/onboarding_graphic_2.png' />
       </>
 
       <>
@@ -54,7 +54,7 @@ export const Slider = () => {
           </StyledHeaderSubTitle>
         </StyledHeader>
 
-        <StyledGraphic>3</StyledGraphic>
+        <StyledGraphic alt='Onboarding Graphic 1' src='images/onboarding_graphic_3.png' />
       </>
     </StyledSlider>
   );
@@ -79,7 +79,7 @@ const StyledHeaderSubTitle = styled.div`
   ${(props) => props.theme.font.medium16}
 `;
 
-const StyledGraphic = styled.div`
+const StyledGraphic = styled.img`
   width: 100% !important;
   aspect-ratio: 1/1;
   background-color: #1b1b1b;

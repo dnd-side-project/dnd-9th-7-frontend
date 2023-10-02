@@ -11,7 +11,7 @@ export const theme = {
 
     gray01: '#fcfcfc',
     gray02: '#f5f5f5',
-    gray03: 'efefef',
+    gray03: '#efefef',
     gray04: '#e8e8e8',
     gray05: '#b7b7b7',
     gray06: '#949494',

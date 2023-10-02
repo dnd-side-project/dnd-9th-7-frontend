@@ -119,3 +119,5 @@ export { default as snow_white } from '@public/icons/weathers/snow_white.svg';
 export { default as sunny_black } from '@public/icons/weathers/sunny_black.svg';
 export { default as sunny_gray } from '@public/icons/weathers/sunny_gray.svg';
 export { default as sunny_white } from '@public/icons/weathers/sunny_white.svg';
+
+export { default as cover } from '@public/icons/cover.svg';
