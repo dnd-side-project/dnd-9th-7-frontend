@@ -59,7 +59,7 @@ export const BottomSheet = ({ isBottomSheetOpen, closeBottomSheet, menuList }: P
 };
 
 const StyledContainer = styled.div`
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
@@ -76,7 +76,6 @@ const StyledBottomSheet = styled(motion.div)`
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* width: 100%; */
   height: 14.4rem;
   background-color: ${(props) => props.theme.color.white};
   border-top-left-radius: 1rem;

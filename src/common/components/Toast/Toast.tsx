@@ -30,8 +30,8 @@ export const Toast = ({ isToastOpen, closeToast }: Props) => {
 };
 
 const StyledToast = styled(motion.div)`
-  position: absolute;
-  bottom: 35rem;
+  position: fixed;
+  bottom: 16rem;
   display: flex;
   align-items: center;
   width: calc(100% - 4.8rem);
