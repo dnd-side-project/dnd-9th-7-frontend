@@ -36,7 +36,7 @@ const StyledToast = styled(motion.div)`
   align-items: center;
   width: calc(100% - 4.8rem);
   height: 7.2rem;
-  background-color: rgba(68, 68, 68, 0.5);
+  background-color: ${(props) => props.theme.color.transparency05};
   backdrop-filter: blur(1rem);
   border: 0.5px solid rgba(255, 255, 255, 0.15);
   z-index: 100;
