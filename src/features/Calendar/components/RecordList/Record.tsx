@@ -1,19 +1,43 @@
+import { BottomSheet } from '@common/components/BottomSheet';
 import { SvgIcon } from '@common/components/SvgIcon';
+import { useOpen } from '@common/hooks';
 import styled from '@emotion/styled';
+import { Link } from 'react-router-dom';
 
-const Record = ({ ...rest }) => {
+const Record = () => {
+  const { open: isBottomSheetOpen, onOpen: openBottomSheet, onClose: closeBottomSheet } = useOpen();
+
   return (
-    <StyledRecord {...rest}>
-      <StyledRecordImage />
-      <div>
-        <StyledRecordTitle>WONDERWALL</StyledRecordTitle>
-        <StyledRecordArtist>OASIS</StyledRecordArtist>
-      </div>
+    <>
+      <StyledRecord>
+        <StyledRecordInfo to='/view-record'>
+          <StyledRecordImage />
+          <div>
+            <StyledRecordTitle>WONDERWALL</StyledRecordTitle>
+            <StyledRecordArtist>OASIS</StyledRecordArtist>
+          </div>
+        </StyledRecordInfo>
 
-      <StyledEditButton>
-        <SvgIcon id='edit_vertical_white' />
-      </StyledEditButton>
-    </StyledRecord>
+        <StyledEditButton>
+          <SvgIcon id='edit_vertical_white' onClick={openBottomSheet} />
+        </StyledEditButton>
+      </StyledRecord>
+
+      <BottomSheet
+        isBottomSheetOpen={isBottomSheetOpen}
+        closeBottomSheet={closeBottomSheet}
+        menuList={[
+          {
+            iconId: 'photo_black',
+            text: '대표 이미지로 설정하기',
+          },
+          {
+            iconId: 'trash_red',
+            text: '기록 삭제하기',
+          },
+        ]}
+      />
+    </>
   );
 };
 
@@ -25,6 +49,12 @@ const StyledRecord = styled.div`
   border-top: 1px solid ${(props) => props.theme.color.gray08};
 `;
 
+const StyledRecordInfo = styled(Link)`
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+`;
+
 const StyledRecordImage = styled.div`
   width: 6.4rem;
   aspect-ratio: 1/1;
@@ -34,6 +64,7 @@ const StyledRecordImage = styled.div`
 
 const StyledRecordTitle = styled.div`
   ${(props) => props.theme.font.bold16}
+  color: ${(props) => props.theme.color.white}
 `;
 
 const StyledRecordArtist = styled.div`

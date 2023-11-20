@@ -1,6 +1,5 @@
 import styled from '@emotion/styled';
 import { AnimatePresence, motion } from 'framer-motion';
-import { useNavigate } from 'react-router-dom';
 import Record from './Record';
 
 interface Props {
@@ -8,7 +7,6 @@ interface Props {
 }
 
 const RecordList = ({ isRecordListShown }: Props) => {
-  const navigate = useNavigate();
   return (
     <AnimatePresence>
       {isRecordListShown && (
@@ -19,12 +17,7 @@ const RecordList = ({ isRecordListShown }: Props) => {
           exit='exit'
         >
           {[0, 1, 2, 3, 4, 5, 6].map((record: number) => (
-            <Record
-              key={record}
-              onClick={() => {
-                navigate('/view-record');
-              }}
-            />
+            <Record key={record} />
           ))}
         </StyledRecordList>
       )}
