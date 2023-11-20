@@ -1,1 +1,1 @@
-export * from './BottonSheet';
+export * from './BottomSheet';
