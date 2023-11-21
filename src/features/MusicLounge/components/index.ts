@@ -1,4 +1,2 @@
-import Navigation from './Navigation';
-import Section from './Section';
-
-export { Navigation, Section };
+export * from './Navigation';
+export * from './Section';

@@ -1,6 +1,6 @@
 import { Navigation as MusicLoungePageNavigation } from '@common/components/Navigation';
 
-const Navigation = () => {
+export const Navigation = () => {
   return (
     <MusicLoungePageNavigation>
       <MusicLoungePageNavigation.Left>
@@ -9,5 +9,3 @@ const Navigation = () => {
     </MusicLoungePageNavigation>
   );
 };
-
-export default Navigation;

@@ -7,7 +7,7 @@ interface Props {
   color: string;
 }
 
-const Section = ({ type, title, color }: Props) => {
+export const Section = ({ type, title, color }: Props) => {
   return (
     <>
       <Background type={type} title={title} color={color} />
@@ -15,5 +15,3 @@ const Section = ({ type, title, color }: Props) => {
     </>
   );
 };
-
-export default Section;
