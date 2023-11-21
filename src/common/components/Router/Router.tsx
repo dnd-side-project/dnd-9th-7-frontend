@@ -1,4 +1,3 @@
-import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 import Home from '@pages/index';
 import RecordPage from '@pages/record';
@@ -8,6 +7,7 @@ import MusicSearchPage from '@pages/musicSearch';
 import PlayingSearchPage from '@pages/playingSearch';
 import ViewRecordPage from '@pages/viewRecord';
 import MusicLoungePage from '@pages/musicLounge';
+import MyPlaylist from '@pages/myPlaylist';
 
 export const Router = () => {
   return (
@@ -20,6 +20,7 @@ export const Router = () => {
       <Route path='/situation' element={<SituationPage />} />
       <Route path='/view-record' element={<ViewRecordPage />} />
       <Route path='/music-lounge' element={<MusicLoungePage />} />
+      <Route path='/my-playlist' element={<MyPlaylist />} />
     </Routes>
   );
 };
