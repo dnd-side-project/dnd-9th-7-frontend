@@ -1,11 +1,16 @@
-import { Navigation as MyPlaylistNavigation } from '@common/components/Navigation';
+import { Navigation as MyPlaylistPageNavigation } from '@common/components/Navigation';
+import { SvgIcon } from '@common/components/SvgIcon';
 
 export const Navigation = () => {
   return (
-    <MyPlaylistNavigation>
-      <MyPlaylistNavigation.Left>
+    <MyPlaylistPageNavigation>
+      <MyPlaylistPageNavigation.Left>
         <span>MY PLAYLIST</span>
-      </MyPlaylistNavigation.Left>
-    </MyPlaylistNavigation>
+      </MyPlaylistPageNavigation.Left>
+
+      <MyPlaylistPageNavigation.Right>
+        <SvgIcon id='filter_white' />
+      </MyPlaylistPageNavigation.Right>
+    </MyPlaylistPageNavigation>
   );
 };
