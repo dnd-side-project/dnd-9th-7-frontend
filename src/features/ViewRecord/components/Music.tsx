@@ -2,7 +2,7 @@
 /** @jsxImportSource @emotion/react */
 
 import styled from '@emotion/styled';
-import { theme } from '@/stylestheme';
+import { theme } from '@/styles';
 import { SvgIcon } from '@/common/components/SvgIcon';
 import { Spacing } from '@/common/components/Spacing';
 

@@ -4,7 +4,7 @@
 import { useState, useEffect } from 'react';
 import styled from '@emotion/styled';
 import { client } from '@/apis/client';
-import { theme } from '@/stylestheme';
+import { theme } from '@/styles';
 import { Spacing } from '@/common/components/Spacing';
 
 interface Props {

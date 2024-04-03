@@ -6,7 +6,7 @@ import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 import { SvgIcon } from '@/common/components/SvgIcon';
 import { Calendar, RecordList, Footer, Navigation } from '@/features/Calendar/components';
-import { theme } from '@/stylestheme';
+import { theme } from '@/styles';
 
 const Home = () => {
   const [isRecordListShown, setIsRecordListShown] = useState(false);

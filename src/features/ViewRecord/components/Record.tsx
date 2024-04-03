@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import { useState } from 'react';
 import { Spacing } from '@/common/components/Spacing';
-import { theme } from '@/stylestheme';
+import { theme } from '@/styles';
 
 export const Record = () => {
   const [imageUrl, setImageUrl] = useState('https://picsum.photos/236/354');
