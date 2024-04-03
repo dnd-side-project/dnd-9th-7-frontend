@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 import { Input } from '@/common/components/Input';
-import { SvgIcon } from '@/common/componentss/SvgIcon';
+import { SvgIcon } from '@/common/components/SvgIcon';
 import { commonStyles, StyledTitle } from '@/features/Record/record.style';
 
 export const Place = () => {

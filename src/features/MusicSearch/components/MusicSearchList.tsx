@@ -2,7 +2,7 @@
 /* eslint-disable no-empty */
 import styled from '@emotion/styled';
 import { useState, useEffect } from 'react';
-import { theme } from '@/stylestheme';
+import { theme } from '@/styles';
 import { client } from '@/apis/client';
 
 interface Props {

@@ -3,7 +3,7 @@ import styled from '@emotion/styled';
 import { useContext } from 'react';
 import { SvgIcon } from '@/common/components/SvgIcon';
 import { CategoryContext } from '@/features/Situation/CategoryContext';
-import { theme } from '@/stylestheme';
+import { theme } from '@/styles';
 import * as Icons from '@/common/components/SvgIcon/assets';
 
 interface Props {

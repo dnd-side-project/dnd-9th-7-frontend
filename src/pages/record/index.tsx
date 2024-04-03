@@ -1,4 +1,4 @@
-import { Spacing } from '@/commoncomponents/Spacing';
+import { Spacing } from '@/common/components/Spacing';
 import {
   RecordDate,
   Situation,
