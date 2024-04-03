@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import styled from '@emotion/styled';
 import { Dispatch, SetStateAction, useCallback, useRef, useState } from 'react';
-import { theme } from '@styles/theme';
-import { SvgIcon } from '@common/components/SvgIcon';
+import { theme } from '@/styles';
+import { SvgIcon } from '@/common/components/SvgIcon';
 
 interface Props {
   setImageUrl: Dispatch<SetStateAction<string>>;

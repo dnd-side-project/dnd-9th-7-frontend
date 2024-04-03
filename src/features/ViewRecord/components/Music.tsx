@@ -2,9 +2,9 @@
 /** @jsxImportSource @emotion/react */
 
 import styled from '@emotion/styled';
-import { theme } from '@styles/theme';
-import { SvgIcon } from '@common/components/SvgIcon';
-import { Spacing } from '@common/components/Spacing';
+import { theme } from '@/stylestheme';
+import { SvgIcon } from '@/common/components/SvgIcon';
+import { Spacing } from '@/common/components/Spacing';
 
 export const Music = () => {
   const tagArray = ['평온', '저녁', '맑음'];

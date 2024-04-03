@@ -1,6 +1,6 @@
 import { PropsWithChildren } from 'react';
 import styled from '@emotion/styled';
-import { theme } from '@styles/theme';
+import { theme } from '@/styles';
 
 export const Layout = ({ children }: PropsWithChildren) => {
   return <StyledLayout>{children}</StyledLayout>;

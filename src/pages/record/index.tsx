@@ -1,4 +1,4 @@
-import { Spacing } from '@common/components/Spacing';
+import { Spacing } from '@/commoncomponents/Spacing';
 import {
   RecordDate,
   Situation,
@@ -9,7 +9,7 @@ import {
   YoutubePlay,
   Footer,
   Navigation,
-} from '@features/Record/components';
+} from '@/features/Record/components';
 
 const RecordPage = () => {
   return (

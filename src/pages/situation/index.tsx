@@ -1,9 +1,9 @@
-import { Spacing } from '@common/components/Spacing';
 import styled from '@emotion/styled';
-import { theme } from '@styles/theme';
-import { Category, Navigation } from '@features/Situation/components';
-import { emotion1, emotion2, time, weather } from '@features/Situation/categoryData';
-import { StyledRequiredField } from '@features/Record/record.style';
+import { Spacing } from '@/common/components/Spacing';
+import { theme } from '@/styles';
+import { Category, Navigation } from '@/features/Situation/components';
+import { emotion1, emotion2, time, weather } from '@/features/Situation/categoryData';
+import { StyledRequiredField } from '@/features/Record/record.style';
 
 const SituationPage = () => {
   return (

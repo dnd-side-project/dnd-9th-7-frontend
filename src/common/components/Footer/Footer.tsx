@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
-import { theme } from '@styles/theme';
 import type { PropsWithChildren } from 'react';
+import { theme } from '@/styles';
 
 export const Footer = ({ children }: PropsWithChildren) => {
   return <StyledFooter>{children}</StyledFooter>;

@@ -1,7 +1,7 @@
-import { Spacing } from '@common/components/Spacing';
-import { MusicSearchList, Navigation } from '@features/MusicSearch/components';
 import { useState } from 'react';
-import { SearchInput } from '@features/common/components';
+import { Spacing } from '@/common/components/Spacing';
+import { MusicSearchList, Navigation } from '@/features/MusicSearch/components';
+import { SearchInput } from '@/features/common/components';
 
 const MusicSearchPage = () => {
   const [value, setValue] = useState('');

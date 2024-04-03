@@ -1,15 +1,15 @@
 /* eslint-disable react/no-unknown-property */
 /** @jsxImportSource @emotion/react */
-import { SvgIcon } from '@common/components/SvgIcon';
+import { useState } from 'react';
+import { DateValue } from 'src/types';
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
-import { commonStyles, StyledRequiredField, StyledTitle } from '@features/Record/record.style';
 import Calendar from 'react-calendar';
+import { commonStyles, StyledRequiredField, StyledTitle } from '@/features/Record/record.style';
+import { SvgIcon } from '@/common/components/SvgIcon';
 import 'react-calendar/dist/Calendar.css';
-import { useState } from 'react';
-import { Overlay } from '@common/components/Overlay';
-import { useformatDate, useOpen } from '@common/hooks';
-import { DateValue } from 'src/types';
+import { useformatDate, useOpen } from '@/common/hooks';
+import { Overlay } from '@/common/components/Overlay';
 
 export const RecordDate = () => {
   const [value, onChange] = useState<DateValue>(new Date());

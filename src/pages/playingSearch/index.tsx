@@ -1,7 +1,7 @@
-import { Spacing } from '@common/components/Spacing';
-import { SearchInput } from '@features/common/components';
 import { useState } from 'react';
-import { PlayingSearchList, Navigation } from '@features/PlayingSearch/components';
+import { Spacing } from '@/common/components/Spacing';
+import { SearchInput } from '@/features/common/components';
+import { PlayingSearchList, Navigation } from '@/features/PlayingSearch/components';
 
 const PlayingSearchPage = () => {
   const [value, setValue] = useState('');

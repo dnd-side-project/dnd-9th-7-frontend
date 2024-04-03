@@ -2,13 +2,13 @@
 /* eslint-disable @typescript-eslint/no-unused-expressions */
 /* eslint-disable no-alert */
 /** @jsxImportSource @emotion/react */
-import { Navigation as SituationPageNavigation } from '@common/components/Navigation';
-import { SvgIcon } from '@common/components/SvgIcon';
 import { css } from '@emotion/react';
-import { CategoryContext } from '@features/Situation/CategoryContext';
-import { theme } from '@styles/theme';
 import { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { Navigation as SituationPageNavigation } from '@/common/components/Navigation';
+import { SvgIcon } from '@/common/components/SvgIcon';
+import { CategoryContext } from '@/features/Situation/CategoryContext';
+import { theme } from '@/styles';
 
 export const Navigation = () => {
   const navigate = useNavigate();

@@ -1,10 +1,10 @@
 /** @jsxImportSource @emotion/react */
-import { Input } from '@common/components/Input';
-import { SvgIcon } from '@common/components/SvgIcon';
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
-import { theme } from '@styles/theme';
 import { SetStateAction, KeyboardEvent, Dispatch } from 'react';
+import { Input } from '@/common/components/Input';
+import { SvgIcon } from '@/common/components/SvgIcon';
+import { theme } from '@/styles';
 
 interface Props {
   setValue: Dispatch<SetStateAction<string>>;

@@ -1,9 +1,9 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 import styled from '@emotion/styled';
-import { StyledTitle, StyledPlusButton } from '@features/Record/record.style';
-import { theme } from '@styles/theme';
 import { useNavigate } from 'react-router-dom';
+import { StyledTitle, StyledPlusButton } from '@/features/Record/record.style';
+import { theme } from '@/styles';
 
 export const Music = () => {
   const navigate = useNavigate();

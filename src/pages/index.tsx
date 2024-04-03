@@ -2,11 +2,11 @@
 /** @jsxImportSource @emotion/react */
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { SvgIcon } from '@common/components/SvgIcon';
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
-import { Calendar, RecordList, Footer, Navigation } from '@features/Calendar/components';
-import { theme } from '@styles/theme';
+import { SvgIcon } from '@/common/components/SvgIcon';
+import { Calendar, RecordList, Footer, Navigation } from '@/features/Calendar/components';
+import { theme } from '@/stylestheme';
 
 const Home = () => {
   const [isRecordListShown, setIsRecordListShown] = useState(false);

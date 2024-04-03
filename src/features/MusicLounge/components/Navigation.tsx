@@ -1,4 +1,4 @@
-import { Navigation as MusicLoungePageNavigation } from '@common/components/Navigation';
+import { Navigation as MusicLoungePageNavigation } from '@/common/components/Navigation';
 
 const Navigation = () => {
   return (
