@@ -1,7 +1,7 @@
 /* eslint-disable no-nested-ternary */
-import { Navigation, Music, Record, Footer, Play } from '@features/ViewRecord/components';
 import { useState } from 'react';
 import { ViewRecordTab } from 'src/types';
+import { Navigation, Music, Record, Footer, Play } from '@/features/ViewRecord/components';
 
 const ViewRecordPage = () => {
   const [selectedTab, setSelectedTab] = useState<ViewRecordTab>('music');

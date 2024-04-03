@@ -1,4 +1,4 @@
-import { Navigation, Section } from '@features/MusicLounge/components';
+import { Navigation, Section } from '@/features/MusicLounge/components';
 
 const MusicLoungePage = () => {
   return (

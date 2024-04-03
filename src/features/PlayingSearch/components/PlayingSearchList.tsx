@@ -2,10 +2,10 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable no-empty */
 import { useState, useEffect } from 'react';
-import { client } from '@apis/client';
 import styled from '@emotion/styled';
-import { theme } from '@styles/theme';
-import { Spacing } from '@common/components/Spacing';
+import { client } from '@/apis/client';
+import { theme } from '@/stylestheme';
+import { Spacing } from '@/common/components/Spacing';
 
 interface Props {
   value: string;

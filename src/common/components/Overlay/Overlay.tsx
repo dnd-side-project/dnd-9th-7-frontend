@@ -1,9 +1,9 @@
 /* eslint-disable react/require-default-props */
 import type { PropsWithChildren } from 'react';
 
-import { useClickOutside } from '@common/hooks';
-import { Portal } from '@common/components/Portal';
 import styled from '@emotion/styled';
+import { Portal } from '@/common/components/Portal';
+import { useClickOutside } from '@/common/hooks';
 
 interface Props {
   onClose?: () => void;

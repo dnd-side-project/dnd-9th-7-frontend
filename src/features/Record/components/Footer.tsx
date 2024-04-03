@@ -1,5 +1,5 @@
-import { Footer as RecordPageFooter } from '@common/components/Footer';
-import { SvgIcon } from '@common/components/SvgIcon';
+import { Footer as RecordPageFooter } from '@/common/components/Footer';
+import { SvgIcon } from '@/common/components/SvgIcon';
 
 export const Footer = () => {
   return (

@@ -1,4 +1,4 @@
-import { Navigation as CalendarPageNavigation } from '@common/components/Navigation';
+import { Navigation as CalendarPageNavigation } from '@/common/components/Navigation';
 
 const Navigation = () => {
   return (

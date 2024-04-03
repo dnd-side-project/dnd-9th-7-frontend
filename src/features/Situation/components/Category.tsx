@@ -1,10 +1,10 @@
 /* eslint-disable no-nested-ternary */
-import { SvgIcon } from '@common/components/SvgIcon';
 import styled from '@emotion/styled';
-import { CategoryContext } from '@features/Situation/CategoryContext';
-import { theme } from '@styles/theme';
 import { useContext } from 'react';
-import * as Icons from '@common/components/SvgIcon/assets';
+import { SvgIcon } from '@/common/components/SvgIcon';
+import { CategoryContext } from '@/features/Situation/CategoryContext';
+import { theme } from '@/stylestheme';
+import * as Icons from '@/common/components/SvgIcon/assets';
 
 interface Props {
   type: 'emotion' | 'time' | 'weather';

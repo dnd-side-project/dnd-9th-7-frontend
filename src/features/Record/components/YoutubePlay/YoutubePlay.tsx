@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
-import { commonStyles, StyledPlusButton, StyledTitle } from '@features/Record/record.style';
 import { useNavigate } from 'react-router-dom';
+import { commonStyles, StyledPlusButton, StyledTitle } from '@/features/Record/record.style';
 
 export const YoutubePlay = () => {
   const navigate = useNavigate();

@@ -1,5 +1,5 @@
-import { Navigation as RecordPageNavigation } from '@common/components/Navigation';
-import { SvgIcon } from '@common/components/SvgIcon';
+import { Navigation as RecordPageNavigation } from '@/common/components/Navigation';
+import { SvgIcon } from '@/common/components/SvgIcon';
 
 export const Navigation = () => {
   return (

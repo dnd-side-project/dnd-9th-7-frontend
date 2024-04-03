@@ -1,12 +1,12 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable jsx-a11y/no-static-element-interactions */
-import { Footer as ViewRecordPageFooter } from '@common/components/Footer';
-import { Spacing } from '@common/components/Spacing';
-import { SvgIcon } from '@common/components/SvgIcon';
 import styled from '@emotion/styled';
-import { theme } from '@styles/theme';
 import { Dispatch, SetStateAction } from 'react';
 import { ViewRecordTab } from 'src/types';
+import { Footer as ViewRecordPageFooter } from '@/common/components/Footer';
+import { Spacing } from '@/common/components/Spacing';
+import { SvgIcon } from '@/common/components/SvgIcon';
+import { theme } from '@/styles';
 
 interface Props {
   selectedTab: ViewRecordTab;

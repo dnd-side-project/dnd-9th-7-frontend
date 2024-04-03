@@ -4,10 +4,10 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable react/no-unstable-nested-components */
 import styled from '@emotion/styled';
-import { commonStyles, StyledTitle } from '@features/Record/record.style';
-import { theme } from '@styles/theme';
 import { useState } from 'react';
-import { Spacing } from '@common/components/Spacing';
+import { commonStyles, StyledTitle } from '@/features/Record/record.style';
+import { theme } from '@/styles/theme';
+import { Spacing } from '@/common/components/Spacing';
 import { RecordAreaImage } from './RecordAreaImage';
 
 /**

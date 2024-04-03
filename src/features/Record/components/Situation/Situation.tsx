@@ -1,11 +1,11 @@
-import { SvgIcon } from '@common/components/SvgIcon';
 import styled from '@emotion/styled';
-import { commonStyles, StyledRequiredField, StyledTitle } from '@features/Record/record.style';
-import { CategoryContext } from '@features/Situation/CategoryContext';
-import { theme } from '@styles/theme';
 import { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
-import * as Icons from '@common/components/SvgIcon/assets';
+import { SvgIcon } from '@/common/components/SvgIcon';
+import { commonStyles, StyledRequiredField, StyledTitle } from '@/features/Record/record.style';
+import { CategoryContext } from '@/features/Situation/CategoryContext';
+import { theme } from '@/styles';
+import * as Icons from '@/common/components/SvgIcon/assets';
 
 export const Situation = () => {
   const { category } = useContext(CategoryContext);

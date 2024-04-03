@@ -1,9 +1,9 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable no-empty */
 import styled from '@emotion/styled';
-import { theme } from '@styles/theme';
 import { useState, useEffect } from 'react';
-import { client } from '@apis/client';
+import { theme } from '@/stylestheme';
+import { client } from '@/apis/client';
 
 interface Props {
   value: string;

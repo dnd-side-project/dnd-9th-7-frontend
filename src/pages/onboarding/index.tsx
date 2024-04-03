@@ -1,5 +1,5 @@
 import React from 'react';
-import { Slider, KakaoButton } from '@features/Onboarding/components';
+import { Slider, KakaoButton } from '@/features/Onboarding/components';
 
 const OnboardingPage = () => {
   return (

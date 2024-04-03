@@ -1,5 +1,5 @@
-import { SvgIcon } from '@common/components/SvgIcon';
 import styled from '@emotion/styled';
+import { SvgIcon } from '@/common/components/SvgIcon';
 
 const Record = ({ ...rest }) => {
   return (
