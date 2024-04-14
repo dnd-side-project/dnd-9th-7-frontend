@@ -1,21 +1,28 @@
 import styled from '@emotion/styled';
+import { createPortal } from 'react-dom';
 import { SvgIcon } from '@/common/components/SvgIcon';
 
 export const Toast = () => {
-  return (
+  const content = (
     <StyledToast>
       <StyledIcon>
-        <SvgIcon id='complete_black' />
+        <SvgIcon id='complete_white' />
       </StyledIcon>
       <StyledText>기록이 삭제되었습니다.</StyledText>
       <StyledDelete>실행취소</StyledDelete>
     </StyledToast>
   );
+
+  const el = document.getElementById('toast');
+  if (!el) return null;
+  return createPortal(content, el);
 };
 
 const StyledToast = styled.div`
   position: fixed;
+  left: 50%;
   bottom: 16rem;
+  transform: translateX(-50%);
   display: flex;
   align-items: center;
   width: calc(100% - 4.8rem);
@@ -37,6 +44,7 @@ const StyledIcon = styled.div`
 
 const StyledText = styled.div`
   ${(props) => props.theme.font.medium16}
+  color: ${(props) => props.theme.color.white};
   flex-grow: 1;
 `;
 
