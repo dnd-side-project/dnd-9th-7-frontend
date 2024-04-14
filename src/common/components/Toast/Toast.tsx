@@ -1,15 +1,18 @@
 import styled from '@emotion/styled';
 import { createPortal } from 'react-dom';
 import { SvgIcon } from '@/common/components/SvgIcon';
+import { useToast } from '@/stores/toast';
 
 export const Toast = () => {
-  const content = (
+  const { toast } = useToast();
+
+  const content = toast.isOpened && (
     <StyledToast>
       <StyledIcon>
         <SvgIcon id='complete_white' />
       </StyledIcon>
-      <StyledText>기록이 삭제되었습니다.</StyledText>
-      <StyledDelete>실행취소</StyledDelete>
+      <StyledMessage>{toast.message}</StyledMessage>
+      {toast.canCancel && <StyledCancel>실행취소</StyledCancel>}
     </StyledToast>
   );
 
@@ -42,13 +45,13 @@ const StyledIcon = styled.div`
   width: 15%;
 `;
 
-const StyledText = styled.div`
+const StyledMessage = styled.div`
   ${(props) => props.theme.font.medium16}
   color: ${(props) => props.theme.color.white};
   flex-grow: 1;
 `;
 
-const StyledDelete = styled.div`
+const StyledCancel = styled.div`
   ${(props) => props.theme.font.semibold16}
   color: ${(props) => props.theme.color.orange};
   display: flex;
