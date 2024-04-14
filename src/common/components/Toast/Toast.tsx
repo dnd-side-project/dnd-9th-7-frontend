@@ -1,30 +1,48 @@
 import styled from '@emotion/styled';
 import { createPortal } from 'react-dom';
+import { AnimatePresence, motion } from 'framer-motion';
 import { SvgIcon } from '@/common/components/SvgIcon';
 import { useToast } from '@/stores/toast';
 
 export const Toast = () => {
   const { toast } = useToast();
 
-  const content = toast.isOpened && (
-    <StyledToast>
-      <StyledIcon>
-        <SvgIcon id='complete_white' />
-      </StyledIcon>
-      <StyledMessage>{toast.message}</StyledMessage>
-      {toast.canCancel && <StyledCancel>실행취소</StyledCancel>}
-    </StyledToast>
-  );
+  const toastVariants = {
+    invisible: {
+      opacity: 0,
+      bottom: '15rem',
+    },
+    visible: {
+      opacity: 1,
+      bottom: '16rem',
+    },
+    exit: {
+      opacity: 0,
+      bottom: '15rem',
+    },
+  };
 
+  const content = (
+    <AnimatePresence>
+      {toast.isOpened && (
+        <StyledToast variants={toastVariants} initial='invisible' animate='visible' exit='exit'>
+          <StyledIcon>
+            <SvgIcon id='complete_white' />
+          </StyledIcon>
+          <StyledMessage>{toast.message}</StyledMessage>
+          {toast.canCancel && <StyledCancel>실행취소</StyledCancel>}
+        </StyledToast>
+      )}
+    </AnimatePresence>
+  );
   const el = document.getElementById('toast');
   if (!el) return null;
   return createPortal(content, el);
 };
 
-const StyledToast = styled.div`
+const StyledToast = styled(motion.div)`
   position: fixed;
   left: 50%;
-  bottom: 16rem;
   transform: translateX(-50%);
   display: flex;
   align-items: center;
