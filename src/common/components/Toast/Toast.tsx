@@ -5,32 +5,36 @@ import { useToast } from '@/stores/toast';
 import { Portal } from '@/common/components/Portal';
 
 export const Toast = () => {
-  const { toast } = useToast();
+  const {
+    toast: { isOpened, iconId, message, onCancel, bottomPosition },
+  } = useToast();
 
   const toastVariants = {
     invisible: {
       opacity: 0,
-      bottom: '15rem',
+      bottom: `${bottomPosition - 1}rem`,
     },
     visible: {
       opacity: 1,
-      bottom: '16rem',
+      bottom: `${bottomPosition}rem`,
     },
     exit: {
       opacity: 0,
-      bottom: '15rem',
+      bottom: `${bottomPosition - 1}rem`,
     },
   };
 
   const children = (
     <AnimatePresence>
-      {toast.isOpened && (
+      {isOpened && (
         <StyledToast variants={toastVariants} initial='invisible' animate='visible' exit='exit'>
-          <StyledIcon>
-            <SvgIcon id='complete_white' />
-          </StyledIcon>
-          <StyledMessage>{toast.message}</StyledMessage>
-          {toast.canCancel && <StyledCancel>실행취소</StyledCancel>}
+          {iconId && (
+            <StyledIcon>
+              <SvgIcon id={iconId} />
+            </StyledIcon>
+          )}
+          <StyledMessage>{message}</StyledMessage>
+          {onCancel && <StyledCancel onClick={onCancel}>실행취소</StyledCancel>}
         </StyledToast>
       )}
     </AnimatePresence>
@@ -44,13 +48,16 @@ const StyledToast = styled(motion.div)`
   left: 50%;
   transform: translateX(-50%);
   display: flex;
+  justify-content: space-between;
   align-items: center;
   width: calc(100% - 4.8rem);
   height: 7.2rem;
   background-color: ${(props) => props.theme.color.transparency05};
   backdrop-filter: blur(1rem);
   border: 0.5px solid rgba(255, 255, 255, 0.15);
-  z-index: 100;
+  padding: 0 2rem;
+  box-sizing: border-box;
+  z-index: 99;
   @media screen and (min-width: 390px) {
     max-width: 34.2rem;
   }
@@ -59,7 +66,7 @@ const StyledToast = styled(motion.div)`
 const StyledIcon = styled.div`
   display: flex;
   justify-content: center;
-  width: 15%;
+  margin-right: 1rem;
 `;
 
 const StyledMessage = styled.div`
@@ -73,5 +80,4 @@ const StyledCancel = styled.div`
   color: ${(props) => props.theme.color.orange};
   display: flex;
   justify-content: center;
-  width: 30%;
 `;
