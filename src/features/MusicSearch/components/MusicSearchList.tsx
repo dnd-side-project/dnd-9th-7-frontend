@@ -4,6 +4,8 @@ import styled from '@emotion/styled';
 import { useState, useEffect } from 'react';
 import { theme } from '@/styles';
 import { client } from '@/apis/client';
+import { SvgIcon } from '@/common/components/SvgIcon';
+import { Spacing } from '@/common/components/Spacing';
 
 interface Props {
   value: string;
@@ -34,24 +36,31 @@ export const MusicSearchList = ({ value }: Props) => {
 
   return (
     <>
-      {musicDatas?.map((musicData: any) => (
-        <StyledMusicSearchItem key={musicData.id}>
-          <StyledImage src={musicData?.album.images[0].url} />
-          <StyleTextWrapper>
-            <StyledTitle>{musicData?.artists[0].name}</StyledTitle>
-            <StyledDescription>{musicData?.name}</StyledDescription>
-            <StyledDescription>{musicData?.album.releaseDate}</StyledDescription>
-          </StyleTextWrapper>
-        </StyledMusicSearchItem>
-      ))}
-      <StyledMusicSearchItem>
-        <StyledImage src='https://picsum.photos/236/354' />
-        <StyleTextWrapper>
-          <StyledTitle>WOnder</StyledTitle>
-          <StyledDescription>oasis</StyledDescription>
-          <StyledDescription>2023.08.20</StyledDescription>
-        </StyleTextWrapper>
-      </StyledMusicSearchItem>
+      {musicDatas.length ? (
+        musicDatas.map((musicData: any) => (
+          <StyledMusicSearchItem key={musicData.id}>
+            <StyledImage src={musicData.album.images[0].url} />
+            <StyleTextWrapper>
+              <StyledTitle>{musicData.artists[0].name}</StyledTitle>
+              <StyledDescription>{musicData.name}</StyledDescription>
+              <StyledDescription>{musicData.album.releaseDate}</StyledDescription>
+            </StyleTextWrapper>
+          </StyledMusicSearchItem>
+        ))
+      ) : (
+        <StyleEmptyWrapper>
+          <Spacing size={10} />
+          <SvgIcon id='bang_white' size={49} />
+          <Spacing size={2.4} />
+          <StyleEmptyText>해당되는 음악 정보가 없습니다</StyleEmptyText>
+          <StyleEmptyText>직접 음악을 등록하시겠습니까?</StyleEmptyText>
+          <Spacing size={2.4} />
+          <div style={{ display: 'flex', cursor: 'pointer' }}>
+            <StyleEmptyText2>직접 등록하기</StyleEmptyText2>
+            <SvgIcon id='arrow_right_orange' color='black' />
+          </div>
+        </StyleEmptyWrapper>
+      )}
     </>
   );
 };
@@ -80,6 +89,23 @@ const StyledTitle = styled.div`
 const StyledDescription = styled.div`
   color: ${theme.color.gray08};
   ${theme.font.medium14};
+`;
+
+const StyleEmptyText = styled.div`
+  color: ${theme.color.gray04};
+  ${theme.font.medium18};
+`;
+
+const StyleEmptyText2 = styled.div`
+  color: ${theme.color.orange};
+  ${theme.font.bold16};
+`;
+
+const StyleEmptyWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  width: 100%;
 `;
 
 const StyleTextWrapper = styled.div`
