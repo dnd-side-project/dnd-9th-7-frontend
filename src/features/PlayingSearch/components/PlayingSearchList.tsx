@@ -37,7 +37,7 @@ export const PlayingSearchList = ({ value }: Props) => {
     <>
       {playDatas.length ? (
         playDatas?.map((playData: any) => (
-          <>
+          <div key={playData.id.videoId}>
             <iframe
               width='100%'
               height='200'
@@ -51,14 +51,14 @@ export const PlayingSearchList = ({ value }: Props) => {
               {playData.snippet.channelTitle} · {playData.snippet.publishedAt}
             </StyledDate>
             <Spacing size={3.2} />
-          </>
+          </div>
         ))
       ) : (
         <StyleEmptyWrapper>
           <Spacing size={10} />
           <SvgIcon id='bang_white' size={49} />
           <Spacing size={2.4} />
-          <StyleEmptyText>해당되는 영상 정보가 없습니다</StyleEmptyText>
+          <StyleEmptyText>해당되는 영상 정보가 없습니다.</StyleEmptyText>
         </StyleEmptyWrapper>
       )}
     </>
