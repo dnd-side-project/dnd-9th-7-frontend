@@ -1,8 +1,8 @@
 import styled from '@emotion/styled';
-import { createPortal } from 'react-dom';
 import { AnimatePresence, motion } from 'framer-motion';
 import { SvgIcon } from '@/common/components/SvgIcon';
 import { useToast } from '@/stores/toast';
+import { Portal } from '@/common/components/Portal';
 
 export const Toast = () => {
   const { toast } = useToast();
@@ -22,7 +22,7 @@ export const Toast = () => {
     },
   };
 
-  const content = (
+  const children = (
     <AnimatePresence>
       {toast.isOpened && (
         <StyledToast variants={toastVariants} initial='invisible' animate='visible' exit='exit'>
@@ -35,9 +35,8 @@ export const Toast = () => {
       )}
     </AnimatePresence>
   );
-  const el = document.getElementById('toast');
-  if (!el) return null;
-  return createPortal(content, el);
+
+  return Portal({ id: 'toast', children });
 };
 
 const StyledToast = styled(motion.div)`
