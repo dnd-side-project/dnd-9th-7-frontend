@@ -24,23 +24,23 @@ export const Toast = () => {
     },
   };
 
-  const children = (
-    <AnimatePresence>
-      {isOpened && (
-        <StyledToast variants={toastVariants} initial='invisible' animate='visible' exit='exit'>
-          {iconId && (
-            <StyledIcon>
-              <SvgIcon id={iconId} />
-            </StyledIcon>
-          )}
-          <StyledMessage>{message}</StyledMessage>
-          {onCancel && <StyledCancel onClick={onCancel}>실행취소</StyledCancel>}
-        </StyledToast>
-      )}
-    </AnimatePresence>
+  return (
+    <Portal id='toast'>
+      <AnimatePresence>
+        {isOpened && (
+          <StyledToast variants={toastVariants} initial='invisible' animate='visible' exit='exit'>
+            {iconId && (
+              <StyledIcon>
+                <SvgIcon id={iconId} />
+              </StyledIcon>
+            )}
+            <StyledMessage>{message}</StyledMessage>
+            {onCancel && <StyledCancel onClick={onCancel}>실행취소</StyledCancel>}
+          </StyledToast>
+        )}
+      </AnimatePresence>
+    </Portal>
   );
-
-  return Portal({ id: 'toast', children });
 };
 
 const StyledToast = styled(motion.div)`
