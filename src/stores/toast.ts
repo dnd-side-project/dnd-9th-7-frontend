@@ -7,7 +7,7 @@ type ToastType = {
   iconId?: IconIdType;
   message: ReactNode | string;
   onCancel?: () => void;
-  bottomPosition: number;
+  bottomPosition?: number;
 };
 
 interface ToastStoreType {
@@ -21,18 +21,18 @@ interface ToastStoreType {
     iconId?: ToastType['iconId'];
     message: ToastType['message'];
     onCancel?: ToastType['onCancel'];
-    bottomPosition: ToastType['bottomPosition'];
+    bottomPosition?: ToastType['bottomPosition'];
   }) => void;
 }
 
 export const useToast = create<ToastStoreType>((set) => ({
-  toast: { isOpened: false, message: null, bottomPosition: 0 },
-  showToast: ({ iconId, message, onCancel, bottomPosition }) => {
+  toast: { isOpened: false, message: null },
+  showToast: ({ iconId, message, onCancel, bottomPosition = 16.4 }) => {
     set(() => ({ toast: { isOpened: true, iconId, message, onCancel, bottomPosition } }));
     setTimeout(
       () =>
         set(() => ({
-          toast: { isOpened: false, message: null, bottomPosition: 0 },
+          toast: { isOpened: false, message: null },
         })),
       3000,
     );

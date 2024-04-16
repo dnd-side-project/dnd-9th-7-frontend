@@ -12,15 +12,15 @@ export const Toast = () => {
   const toastVariants = {
     invisible: {
       opacity: 0,
-      bottom: `${bottomPosition - 1}rem`,
+      bottom: bottomPosition && `${bottomPosition - 1}rem`,
     },
     visible: {
       opacity: 1,
-      bottom: `${bottomPosition}rem`,
+      bottom: bottomPosition && `${bottomPosition}rem`,
     },
     exit: {
       opacity: 0,
-      bottom: `${bottomPosition - 1}rem`,
+      bottom: bottomPosition && `${bottomPosition - 1}rem`,
     },
   };
 
