@@ -8,7 +8,15 @@ interface Props {
 
 export const Portal = ({ id, children }: Props) => {
   const portalDiv = document.getElementById(id);
-  if (!portalDiv) return null;
+  if (!portalDiv) {
+    const newDiv = document.createElement('div');
+    newDiv.id = id;
+
+    const root = document.getElementById('root');
+    root?.insertAdjacentElement('afterend', newDiv);
+
+    return createPortal(children, newDiv);
+  }
 
   return createPortal(children, portalDiv);
 };
