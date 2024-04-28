@@ -20,6 +20,7 @@ export { default as arrow_down_white_small } from '@/public/icons/common/arrow_d
 export { default as arrow_down_white } from '@/public/icons/common/arrow_down_white.svg';
 export { default as arrow_left_white_small } from '@/public/icons/common/arrow_left_white_small.svg';
 export { default as arrow_left_white } from '@/public/icons/common/arrow_left_white.svg';
+export { default as arrow_right_orange } from '@/public/icons/common/arrow_right_orange.svg';
 export { default as arrow_right_white_small } from '@/public/icons/common/arrow_right_white_small.svg';
 export { default as arrow_right_white } from '@/public/icons/common/arrow_right_white.svg';
 export { default as arrow_up_white_small } from '@/public/icons/common/arrow_up_white_small.svg';
