@@ -1,40 +1,20 @@
 /* eslint-disable react/jsx-no-useless-fragment */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable no-empty */
-import { useState, useEffect } from 'react';
 import styled from '@emotion/styled';
-import { client } from '@/apis/client';
 import { Spacing } from '@/common/components/Spacing';
 import { SvgIcon } from '@/common/components/SvgIcon';
+import { useGetPlayData } from '@/features/PlayingSearch/apis/useGetPlayData';
 
 interface Props {
   value: string;
 }
 export const PlayingSearchList = ({ value }: Props) => {
-  // TODO : youtube api react-quert 로직으로 연동하는 작업, music api 리스폰스 타입 지정
-  const [playDatas, setPlayDatas] = useState<any>([]);
-  useEffect(() => {
-    const fetchMusicData = async () => {
-      const query = value;
-
-      try {
-        const response = await client.get('/api/youtube', {
-          params: {
-            query,
-          },
-        });
-
-        const responseData = response.data.data.items;
-        setPlayDatas(responseData);
-      } catch (error) {}
-    };
-
-    fetchMusicData();
-  }, [value]);
+  const { data: playDatas } = useGetPlayData(value);
 
   return (
     <>
-      {playDatas.length ? (
+      {playDatas ? (
         playDatas?.map((playData: any) => (
           <div key={playData.id.videoId}>
             <iframe
