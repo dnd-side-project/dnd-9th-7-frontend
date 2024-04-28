@@ -4,7 +4,6 @@
 import { useState, useEffect } from 'react';
 import styled from '@emotion/styled';
 import { client } from '@/apis/client';
-import { theme } from '@/styles';
 import { Spacing } from '@/common/components/Spacing';
 import { SvgIcon } from '@/common/components/SvgIcon';
 
@@ -66,19 +65,19 @@ export const PlayingSearchList = ({ value }: Props) => {
 };
 
 const StyledTitle = styled.div`
-  ${theme.font.bold22}
+  ${(props) => props.theme.font.bold22};
   width: 100%;
 `;
 
 const StyledDate = styled.div`
-  ${theme.font.medium14}
-  color : ${theme.color.gray07};
+  ${(props) => props.theme.font.medium14};
+  color: ${(props) => props.theme.color.gray07};
   width: 100%;
 `;
 
 const StyleEmptyText = styled.div`
-  color: ${theme.color.gray04};
-  ${theme.font.medium18};
+  color: ${(props) => props.theme.color.gray04};
+  ${(props) => props.theme.font.medium18};
 `;
 
 const StyleEmptyWrapper = styled.div`
