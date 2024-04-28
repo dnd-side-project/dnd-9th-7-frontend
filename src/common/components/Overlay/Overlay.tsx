@@ -13,7 +13,7 @@ export const Overlay = ({ children, onClose }: PropsWithChildren<Props>) => {
   const ref = useClickOutside({ onClose });
 
   return (
-    <Portal>
+    <Portal id='overlay'>
       <StyledOverlayBackground ref={ref}>{children}</StyledOverlayBackground>
     </Portal>
   );

@@ -4,8 +4,10 @@ import sprites from './sprite/symbol/sprite.svg';
 
 import * as Icons from './assets';
 
+export type IconIdType = keyof typeof Icons;
+
 interface Props extends SVGProps<SVGSVGElement> {
-  id: keyof typeof Icons;
+  id: IconIdType;
   size?: number;
 }
 
