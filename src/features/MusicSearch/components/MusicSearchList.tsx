@@ -2,7 +2,6 @@
 /* eslint-disable no-empty */
 import styled from '@emotion/styled';
 import { useState, useEffect } from 'react';
-import { theme } from '@/styles';
 import { client } from '@/apis/client';
 import { SvgIcon } from '@/common/components/SvgIcon';
 import { Spacing } from '@/common/components/Spacing';
@@ -73,7 +72,7 @@ const StyledMusicSearchItem = styled.div`
   justify-content: left;
   align-items: center;
   gap: 1.6rem;
-  border-bottom: 1px solid ${theme.color.gray08};
+  border-bottom: 1px solid ${(props) => props.theme.color.gray08};
 `;
 
 const StyledImage = styled.img`
@@ -82,23 +81,23 @@ const StyledImage = styled.img`
 `;
 
 const StyledTitle = styled.div`
-  color: ${theme.color.white};
-  ${theme.font.bold16};
+  color: ${(props) => props.theme.color.white};
+  ${(props) => props.theme.font.bold16};
 `;
 
 const StyledDescription = styled.div`
-  color: ${theme.color.gray08};
-  ${theme.font.medium14};
+  color: ${(props) => props.theme.color.gray08};
+  ${(props) => props.theme.font.medium14};
 `;
 
 const StyleEmptyText = styled.div`
-  color: ${theme.color.gray04};
-  ${theme.font.medium18};
+  color: ${(props) => props.theme.color.gray04};
+  ${(props) => props.theme.font.medium18};
 `;
 
 const StyleEmptyText2 = styled.div`
-  color: ${theme.color.orange};
-  ${theme.font.bold16};
+  color: ${(props) => props.theme.color.orange};
+  ${(props) => props.theme.font.bold16};
 `;
 
 const StyleEmptyWrapper = styled.div`
