@@ -1,42 +1,21 @@
+/* eslint-disable react/jsx-no-useless-fragment */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable no-empty */
 import styled from '@emotion/styled';
-import { useState, useEffect } from 'react';
-import { client } from '@/apis/client';
 import { SvgIcon } from '@/common/components/SvgIcon';
 import { Spacing } from '@/common/components/Spacing';
+import { useGetMusicData } from '@/features/MusicSearch/apis';
 
 interface Props {
   value: string;
 }
 export const MusicSearchList = ({ value }: Props) => {
-  // TODO : music api react-quert 로직으로 연동하는 작업, music api 리스폰스 타입 지정
-  const [musicDatas, setMusicDatas] = useState<any>([]);
-  useEffect(() => {
-    const fetchMusicData = async () => {
-      const query = value;
-      const offset = 1;
-
-      try {
-        const response = await client.get('/api/music', {
-          params: {
-            query,
-            offset,
-          },
-        });
-
-        const responseData = response.data[0].tracks.items;
-        setMusicDatas(responseData);
-      } catch (error) {}
-    };
-
-    fetchMusicData(); // 컴포넌트가 마운트되면 데이터를 가져오도록 실행
-  }, [value]);
+  const { data: musicDataList } = useGetMusicData(value);
 
   return (
     <>
-      {musicDatas.length ? (
-        musicDatas.map((musicData: any) => (
+      {musicDataList ? (
+        musicDataList.map((musicData: any) => (
           <StyledMusicSearchItem key={musicData.id}>
             <StyledImage src={musicData.album.images[0].url} />
             <StyleTextWrapper>
@@ -56,7 +35,7 @@ export const MusicSearchList = ({ value }: Props) => {
           <Spacing size={2.4} />
           <div style={{ display: 'flex', cursor: 'pointer' }}>
             <StyleEmptyText2>직접 등록하기</StyleEmptyText2>
-            <SvgIcon id='arrow_right_orange' color='black' />
+            <SvgIcon id='arrow_right_orange' />
           </div>
         </StyleEmptyWrapper>
       )}
