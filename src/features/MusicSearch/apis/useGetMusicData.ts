@@ -2,11 +2,10 @@
 import { useQuery } from '@tanstack/react-query';
 import { SearchApi } from '@/apis/SeacrhApi';
 
-
 export const useGetMusicData = (value: string) => {
   const { data } = useQuery({
     queryKey: useGetMusicData.queryKey(value),
-    queryFn: () => SearchApi.getMusicData(value, 1), // api.getMusicData 메서드는 실제 음악 데이터를 가져오는 API 호출을 처리합니다.
+    queryFn: () => SearchApi.getMusicData(value, 1),
     select: (data) => data[0].tracks.items,
   });
 

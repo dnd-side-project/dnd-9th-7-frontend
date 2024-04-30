@@ -4,18 +4,18 @@
 import styled from '@emotion/styled';
 import { SvgIcon } from '@/common/components/SvgIcon';
 import { Spacing } from '@/common/components/Spacing';
-import { useGetMusicData } from '@/features/MusicSearch/components/apis/useGetMusicData';
+import { useGetMusicData } from '@/features/MusicSearch/apis';
 
 interface Props {
   value: string;
 }
 export const MusicSearchList = ({ value }: Props) => {
-  const { data: musicDatas } = useGetMusicData(value);
+  const { data: musicDataList } = useGetMusicData(value);
 
   return (
     <>
-      {musicDatas ? (
-        musicDatas.map((musicData: any) => (
+      {musicDataList ? (
+        musicDataList.map((musicData: any) => (
           <StyledMusicSearchItem key={musicData.id}>
             <StyledImage src={musicData.album.images[0].url} />
             <StyleTextWrapper>
@@ -35,7 +35,7 @@ export const MusicSearchList = ({ value }: Props) => {
           <Spacing size={2.4} />
           <div style={{ display: 'flex', cursor: 'pointer' }}>
             <StyleEmptyText2>직접 등록하기</StyleEmptyText2>
-            <SvgIcon id='arrow_right_orange' color='black' />
+            <SvgIcon id='arrow_right_orange' />
           </div>
         </StyleEmptyWrapper>
       )}
