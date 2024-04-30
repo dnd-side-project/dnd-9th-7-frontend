@@ -4,18 +4,18 @@
 import styled from '@emotion/styled';
 import { Spacing } from '@/common/components/Spacing';
 import { SvgIcon } from '@/common/components/SvgIcon';
-import { useGetPlayData } from '@/features/PlayingSearch/apis/useGetPlayData';
+import { useGetPlayData } from '@/features/PlayingSearch/apis';
 
 interface Props {
   value: string;
 }
 export const PlayingSearchList = ({ value }: Props) => {
-  const { data: playDatas } = useGetPlayData(value);
+  const { data: playDataList } = useGetPlayData(value);
 
   return (
     <>
-      {playDatas ? (
-        playDatas?.map((playData: any) => (
+      {playDataList ? (
+        playDataList?.map((playData: any) => (
           <div key={playData.id.videoId}>
             <iframe
               width='100%'
