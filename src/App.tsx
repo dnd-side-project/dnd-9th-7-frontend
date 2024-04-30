@@ -6,6 +6,7 @@ import { Router } from '@/common/components/Router';
 import { CategoryProvider } from '@/features/Situation/CategoryContext';
 import { Layout } from '@/common/components/Layout';
 import { GlobalStyle, theme } from '@/styles';
+import { Toast } from '@/common/components/Toast';
 
 const queryClient = new QueryClient();
 
@@ -18,6 +19,7 @@ const App = () => {
           <Layout>
             <CategoryProvider>
               <Router />
+              <Toast />
             </CategoryProvider>
           </Layout>
           <div id='overlay' />
