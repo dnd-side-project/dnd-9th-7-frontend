@@ -1,19 +1,48 @@
 import { Drawer } from 'vaul';
 import styled from '@emotion/styled';
+import { SvgIcon } from '@/common/components/SvgIcon';
+import { useBottomSheet } from '@/common/hooks/useBottomSheet';
 
 export const BottomSheet = () => {
+  const {
+    bottomSheet: { isOpened, menuList },
+    closeBottomSheet,
+  } = useBottomSheet();
   return (
-    <Drawer.Root>
+    <Drawer.Root open={isOpened}>
       <Drawer.Portal>
         <StyledOverlay />
-        <StyledContent>
+        <StyledContent
+          onPointerDownOutside={closeBottomSheet}
+          onCloseAutoFocus={isOpened ? closeBottomSheet : () => null}
+        >
           <StyledBar />
 
-          <>
-            <StyledMenu textColor='black' />
+          {menuList && (
+            <>
+              <StyledMenu
+                textColor='black'
+                onClick={() => {
+                  menuList[0].handleClick();
+                  closeBottomSheet();
+                }}
+              >
+                <SvgIcon id={menuList[0].iconId} />
+                {menuList[0].text}
+              </StyledMenu>
 
-            <StyledMenu textColor='red' />
-          </>
+              <StyledMenu
+                textColor='red'
+                onClick={() => {
+                  menuList[1].handleClick();
+                  closeBottomSheet();
+                }}
+              >
+                <SvgIcon id={menuList[1].iconId} />
+                {menuList[1].text}
+              </StyledMenu>
+            </>
+          )}
         </StyledContent>
       </Drawer.Portal>
     </Drawer.Root>
