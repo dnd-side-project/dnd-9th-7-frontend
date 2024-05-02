@@ -28,7 +28,7 @@ labels:
       - '\bchore\b'
   '💄 design':
     include:
-      - '\style\b'
+      - '\bstyle\b'
   '⚙️setting':
     include:
-      - '\setting\b'
+      - '\bsetting\b'
