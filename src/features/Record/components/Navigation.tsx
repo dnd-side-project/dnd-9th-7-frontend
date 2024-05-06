@@ -1,4 +1,4 @@
-import { Modal } from '@/common/components/Modal/Modal';
+import { Modal } from '@/common/components/Modal';
 import { Navigation as RecordPageNavigation } from '@/common/components/Navigation';
 import { SvgIcon } from '@/common/components/SvgIcon';
 import { useOpen } from '@/common/hooks';
