@@ -5,8 +5,8 @@ import { SearchApi } from '@/apis';
 export const useGetPlayData = (value: string) => {
   const { data } = useQuery({
     queryKey: useGetPlayData.queryKey(value),
-    queryFn: () => SearchApi.getPlayData(value), // api.getMusicData 메서드는 실제 음악 데이터를 가져오는 API 호출을 처리합니다.
-    select: (data) => data.data.items,
+    queryFn: () => SearchApi.getPlayData(value),
+    select: (playData) => playData.data.items,
   });
 
   return { data };
