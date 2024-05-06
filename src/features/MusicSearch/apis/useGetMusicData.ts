@@ -6,7 +6,6 @@ export const useGetMusicData = (value: string) => {
   const { data } = useQuery({
     queryKey: useGetMusicData.queryKey(value),
     queryFn: () => SearchApi.getMusicData(value, 1),
-    // eslint-disable-next-line @typescript-eslint/no-shadow
     select: (musicData) => musicData.tracks.items,
   });
 
