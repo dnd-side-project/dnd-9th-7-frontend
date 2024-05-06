@@ -1,0 +1,32 @@
+name: Sync and merge upstream repository
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  sync:
+    name: Sync forked repo
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v4
+        with: 
+          token: ${{ secrets.MY_SECRET_TOKEN }}
+          fetch-depth: 0
+          ref: main
+
+      - name: Add remote-url
+        run: |
+          git remote add forked-repo https://SeieunYoo:${{ secrets.MY_SECRET_TOKEN }}@github.com/SeieunYoo/dnd-9th-7-frontend
+          git config user.name 'SeieunYoo'
+          git config user.email 'isho48239@gmail.com'
+      
+      - name: Push changes to forked-repo 
+        run: |
+          git push -f forked-repo main
+      
+      - name: Clean up
+        run: |
+          git remote remove forked-repo
