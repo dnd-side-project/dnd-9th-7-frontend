@@ -1,4 +1,4 @@
-import type { PropsWithChildren } from 'react';
+import type { ComponentProps, PropsWithChildren } from 'react';
 import styled from '@emotion/styled';
 import { theme } from '@/styles';
 
@@ -6,15 +6,15 @@ export const Navigation = ({ children }: PropsWithChildren) => {
   return <StyledNavigation>{children}</StyledNavigation>;
 };
 
-const NavigationLeft = ({ children }: PropsWithChildren) => (
-  <StyledNavigationLeft>{children}</StyledNavigationLeft>
+const NavigationLeft = ({ children, ...rest }: PropsWithChildren<ComponentProps<'div'>>) => (
+  <StyledNavigationLeft {...rest}>{children}</StyledNavigationLeft>
 );
 
-const NavigationRight = ({ children }: PropsWithChildren) => (
+const NavigationRight = ({ children }: PropsWithChildren<ComponentProps<'div'>>) => (
   <StyledNavigationRight>{children}</StyledNavigationRight>
 );
 
-const NavigationCenter = ({ children }: PropsWithChildren) => (
+const NavigationCenter = ({ children }: PropsWithChildren<ComponentProps<'div'>>) => (
   <StyledNavigationCenter>{children}</StyledNavigationCenter>
 );
 
