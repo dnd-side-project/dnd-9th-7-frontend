@@ -1,8 +1,8 @@
 import styled from '@emotion/styled';
 import { Link } from 'react-router-dom';
 import { SvgIcon } from '@/common/components/SvgIcon';
-import { useBottomSheet } from '@/stores/bottomSheet';
-import { useToast } from '@/stores/toast';
+import { useBottomSheet } from '@/common/hooks/useBottomSheet';
+import { useToast } from '@/common/hooks/useToast';
 
 const Record = () => {
   const { openBottomSheet } = useBottomSheet();

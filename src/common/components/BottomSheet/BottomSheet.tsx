@@ -1,7 +1,7 @@
 import { Drawer } from 'vaul';
 import styled from '@emotion/styled';
 import { SvgIcon } from '@/common/components/SvgIcon';
-import { useBottomSheet } from '@/stores/bottomSheet';
+import { useBottomSheet } from '@/common/hooks/useBottomSheet';
 
 export const BottomSheet = () => {
   const {
@@ -18,31 +18,19 @@ export const BottomSheet = () => {
         >
           <StyledBar />
 
-          {menuList && (
-            <>
+          {menuList &&
+            menuList.map((menu, menuIndex) => (
               <StyledMenu
-                textColor='black'
+                textColor={menuIndex === 0 ? 'black' : 'red'}
                 onClick={() => {
-                  menuList[0].handleClick();
+                  menu.handleClick();
                   closeBottomSheet();
                 }}
               >
-                <SvgIcon id={menuList[0].iconId} />
-                {menuList[0].text}
+                <SvgIcon id={menu.iconId} />
+                {menu.text}
               </StyledMenu>
-
-              <StyledMenu
-                textColor='red'
-                onClick={() => {
-                  menuList[1].handleClick();
-                  closeBottomSheet();
-                }}
-              >
-                <SvgIcon id={menuList[1].iconId} />
-                {menuList[1].text}
-              </StyledMenu>
-            </>
-          )}
+            ))}
         </StyledContent>
       </Drawer.Portal>
     </Drawer.Root>
@@ -71,7 +59,6 @@ const StyledContent = styled(Drawer.Content)`
   align-items: center;
   background-color: ${(props) => props.theme.color.gray02};
   border-radius: 1rem 1rem 0 0;
-  width: 100%;
   max-width: calc(34.2rem + 4.8rem);
   height: 14.4rem;
   outline: none;

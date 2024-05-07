@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import { AnimatePresence, motion } from 'framer-motion';
 import { SvgIcon } from '@/common/components/SvgIcon';
-import { useToast } from '@/stores/toast';
+import { useToast } from '@/common/hooks/useToast';
 import { Portal } from '@/common/components/Portal';
 
 export const Toast = () => {
