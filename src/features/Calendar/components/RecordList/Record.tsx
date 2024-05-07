@@ -1,8 +1,12 @@
+/* eslint-disable react/no-unknown-property */
+/** @jsxImportSource @emotion/react */
 import styled from '@emotion/styled';
 import { Link } from 'react-router-dom';
+import { css } from '@emotion/react';
 import { SvgIcon } from '@/common/components/SvgIcon';
 import { useBottomSheet } from '@/common/hooks/useBottomSheet';
 import { useToast } from '@/common/hooks/useToast';
+import { theme } from '@/styles';
 
 const Record = () => {
   const { openBottomSheet } = useBottomSheet();
@@ -24,7 +28,15 @@ const Record = () => {
             menuList: [
               {
                 iconId: 'photo_black',
-                text: '대표 이미지로 설정하기',
+                text: (
+                  <span
+                    css={css`
+                      color: ${theme.color.black};
+                    `}
+                  >
+                    대표 이미지로 설정하기
+                  </span>
+                ),
                 handleClick: () => {
                   showToast({
                     iconId: 'complete_white',
@@ -35,7 +47,15 @@ const Record = () => {
               },
               {
                 iconId: 'trash_orange',
-                text: '기록 삭제하기',
+                text: (
+                  <span
+                    css={css`
+                      color: ${theme.color.red};
+                    `}
+                  >
+                    기록 삭제하기
+                  </span>
+                ),
                 handleClick: () => {
                   showToast({
                     iconId: 'complete_white',

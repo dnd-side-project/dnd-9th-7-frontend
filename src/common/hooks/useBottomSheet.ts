@@ -1,9 +1,10 @@
 import { create } from 'zustand';
+import { ReactNode } from 'react';
 import { IconIdType } from '@/common/components/SvgIcon';
 
 type BottomSheetType = {
   isOpened: boolean;
-  menuList: { iconId: IconIdType; text: string; handleClick: () => void }[] | null;
+  menuList: { iconId: IconIdType; text: ReactNode; handleClick: () => void }[] | null;
 };
 
 interface BotttomSheetStoreType {

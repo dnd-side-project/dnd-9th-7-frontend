@@ -19,9 +19,8 @@ export const BottomSheet = () => {
           <StyledBar />
 
           {menuList &&
-            menuList.map((menu, menuIndex) => (
+            menuList.map((menu) => (
               <StyledMenu
-                textColor={menuIndex === 0 ? 'black' : 'red'}
                 onClick={() => {
                   menu.handleClick();
                   closeBottomSheet();
@@ -74,10 +73,8 @@ const StyledBar = styled.div`
   margin-bottom: 1.6rem;
 `;
 
-const StyledMenu = styled.div<{ textColor: string }>`
+const StyledMenu = styled.div`
   ${(props) => props.theme.font.semibold16}
-  color: ${(props) =>
-    props.textColor === 'black' ? props.theme.color.black : props.theme.color.red};
   display: flex;
   align-items: center;
   width: 100%;
