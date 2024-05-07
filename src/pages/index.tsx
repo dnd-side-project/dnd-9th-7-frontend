@@ -1,5 +1,3 @@
-/* eslint-disable react/no-unknown-property */
-/** @jsxImportSource @emotion/react */
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { css } from '@emotion/react';
