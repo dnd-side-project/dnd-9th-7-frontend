@@ -7,6 +7,7 @@ import { CategoryProvider } from '@/features/Situation/CategoryContext';
 import { Layout } from '@/common/components/Layout';
 import { GlobalStyle, theme } from '@/styles';
 import { Toast } from '@/common/components/Toast';
+import { BottomSheet } from '@/common/components/BottomSheet';
 
 const queryClient = new QueryClient();
 
@@ -20,6 +21,7 @@ const App = () => {
             <CategoryProvider>
               <Router />
               <Toast />
+              <BottomSheet />
             </CategoryProvider>
           </Layout>
           <div id='overlay' />

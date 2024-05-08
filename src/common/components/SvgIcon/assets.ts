@@ -34,6 +34,7 @@ export { default as delete_keyword_black } from '@/public/icons/common/delete_ke
 export { default as draft_list_black } from '@/public/icons/common/draft_list_black.svg';
 export { default as edit_horizontal_white } from '@/public/icons/common/edit_horizontal_white.svg';
 export { default as edit_pen_white } from '@/public/icons/common/edit_pen_white.svg';
+export { default as edit_pen_black } from '@/public/icons/common/edit_pen_black.svg';
 export { default as edit_vertical_white } from '@/public/icons/common/edit_vertical_white.svg';
 export { default as filter_white } from '@/public/icons/common/filter_white.svg';
 export { default as music_log_gray } from '@/public/icons/common/music_log_gray.svg';
@@ -43,6 +44,7 @@ export { default as music_lounge_white } from '@/public/icons/common/music_loung
 export { default as my_playlist_gray } from '@/public/icons/common/my_playlist_gray.svg';
 export { default as my_playlist_white } from '@/public/icons/common/my_playlist_white.svg';
 export { default as note_white } from '@/public/icons/common/note_white.svg';
+export { default as photo_black } from '@/public/icons/common/photo_black.svg';
 export { default as photo_gray } from '@/public/icons/common/photo_gray.svg';
 export { default as pin_white } from '@/public/icons/common/pin_white.svg';
 export { default as plus_black } from '@/public/icons/common/plus_black.svg';
