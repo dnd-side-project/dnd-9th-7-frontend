@@ -1,13 +1,13 @@
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
-import Home from '@/pages/index';
-import RecordPage from '@/pages/record';
-import SituationPage from '@/pages/situation';
-import OnboardingPage from '@/pages/onboarding';
-import MusicSearchPage from '@/pages/musicSearch';
-import PlayingSearchPage from '@/pages/playingSearch';
-import ViewRecordPage from '@/pages/viewRecord';
-import MusicLoungePage from '@/pages/musicLounge';
+import Home from '@pages/index';
+import RecordPage from '@pages/record';
+import SituationPage from '@pages/situation';
+import OnboardingPage from '@pages/onboarding';
+import MusicSearchPage from '@pages/musicSearch';
+import PlayingSearchPage from '@pages/playingSearch';
+import ViewRecordPage from '@pages/viewRecord';
+import MusicLoungePage from '@pages/musicLounge';
 
 export const Router = () => {
   return (
