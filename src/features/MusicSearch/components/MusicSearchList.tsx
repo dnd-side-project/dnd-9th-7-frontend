@@ -2,9 +2,9 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable no-empty */
 import styled from '@emotion/styled';
-import { SvgIcon } from '@/common/components/SvgIcon';
-import { Spacing } from '@/common/components/Spacing';
-import { useGetMusicData } from '@/features/MusicSearch/apis';
+import { SvgIcon } from '@/shared/common/components/SvgIcon';
+import { Spacing } from '@/shared/common/components/Spacing';
+import { useGetMusicData } from '@/shared/search/apis';
 
 interface Props {
   value: string;

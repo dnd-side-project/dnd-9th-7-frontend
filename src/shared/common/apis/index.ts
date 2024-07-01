@@ -1,1 +1,2 @@
-export * from './SeacrhApi';
+export * from './client';
+export * from './types';

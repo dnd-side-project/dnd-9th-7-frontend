@@ -3,7 +3,7 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { BrowserRouter } from 'react-router-dom';
 import { ThemeProvider } from '@emotion/react';
 import { Router } from '@/shared/common/components/Router';
-import { CategoryProvider } from '@/features/Situation/CategoryContext';
+import { CategoryProvider } from '@/features/Situation/contexts';
 import { Layout } from '@/shared/common/components/Layout';
 import { GlobalStyle, theme } from '@/styles';
 import { Toast } from '@/shared/common/components/Toast';
