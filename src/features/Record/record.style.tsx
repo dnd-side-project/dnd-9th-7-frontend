@@ -1,7 +1,7 @@
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 import { theme } from '@/styles';
-import { SvgIcon } from '@/common/components/SvgIcon';
+import { SvgIcon } from '@/shared/common/components/SvgIcon';
 
 export const StyledTitle = styled.div`
   ${theme.font.semibold18};

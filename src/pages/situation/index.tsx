@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import { Spacing } from '@/common/components/Spacing';
+import { Spacing } from '@/shared/common/components/Spacing';
 import { theme } from '@/styles';
 import { Category, Navigation } from '@/features/Situation/components';
 import { emotion1, emotion2, time, weather } from '@/features/Situation/categoryData';

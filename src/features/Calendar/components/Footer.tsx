@@ -1,5 +1,5 @@
-import { Footer as CalendarPageFooter } from '@/common/components/Footer';
-import { SvgIcon } from '@/common/components/SvgIcon';
+import { Footer as CalendarPageFooter } from '@/shared/common/components/Footer';
+import { SvgIcon } from '@/shared/common/components/SvgIcon';
 
 const Footer = () => {
   return (

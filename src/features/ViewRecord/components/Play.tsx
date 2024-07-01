@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import { Spacing } from '@/common/components/Spacing';
+import { Spacing } from '@/shared/common/components/Spacing';
 import { theme } from '@/styles';
 
 export const Play = () => {

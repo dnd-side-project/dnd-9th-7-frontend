@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom';
-import { Navigation as MusicSearchPageNavigation } from '@/common/components/Navigation';
-import { SvgIcon } from '@/common/components/SvgIcon';
+import { Navigation as MusicSearchPageNavigation } from '@/shared/common/components/Navigation';
+import { SvgIcon } from '@/shared/common/components/SvgIcon';
 
 export const Navigation = () => {
   const navigate = useNavigate();

@@ -3,9 +3,9 @@
 import styled from '@emotion/styled';
 import { Link } from 'react-router-dom';
 import { css } from '@emotion/react';
-import { SvgIcon } from '@/common/components/SvgIcon';
-import { useBottomSheet } from '@/common/hooks/useBottomSheet';
-import { useToast } from '@/common/hooks/useToast';
+import { SvgIcon } from '@/shared/common/components/SvgIcon';
+import { useBottomSheet } from '@/shared/common/hooks/useBottomSheet';
+import { useToast } from '@/shared/common/hooks/useToast';
 import { theme } from '@/styles';
 
 const Record = () => {

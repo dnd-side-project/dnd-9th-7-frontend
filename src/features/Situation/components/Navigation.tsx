@@ -5,9 +5,9 @@
 import { css } from '@emotion/react';
 import { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Navigation as SituationPageNavigation } from '@/common/components/Navigation';
-import { SvgIcon } from '@/common/components/SvgIcon';
-import { CategoryContext } from '@/features/Situation/CategoryContext';
+import { Navigation as SituationPageNavigation } from '@/shared/common/components/Navigation';
+import { SvgIcon } from '@/shared/common/components/SvgIcon';
+import { CategoryContext } from '@/features/Situation/contexts/CategoryContext';
 import { theme } from '@/styles';
 
 export const Navigation = () => {

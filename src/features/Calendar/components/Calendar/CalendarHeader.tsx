@@ -1,6 +1,6 @@
 import { useCallback, Dispatch, SetStateAction } from 'react';
 import styled from '@emotion/styled';
-import { SvgIcon } from '@/common/components/SvgIcon';
+import { SvgIcon } from '@/shared/common/components/SvgIcon';
 
 interface Props {
   selectedDate: { year: number; month: number; date: number };

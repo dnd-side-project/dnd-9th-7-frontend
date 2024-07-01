@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import { SvgIcon } from '@/common/components/SvgIcon';
+import { SvgIcon } from '@/shared/common/components/SvgIcon';
 
 export const KakaoButton = () => {
   return (

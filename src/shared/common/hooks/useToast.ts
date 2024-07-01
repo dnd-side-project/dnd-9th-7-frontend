@@ -1,6 +1,6 @@
 import { create } from 'zustand';
 import { ReactNode } from 'react';
-import { IconIdType } from '@/common/components/SvgIcon';
+import { IconIdType } from '@/shared/common/components/SvgIcon';
 
 type ToastType = {
   isOpened: boolean;

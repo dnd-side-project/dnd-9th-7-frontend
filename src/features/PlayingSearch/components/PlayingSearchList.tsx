@@ -2,9 +2,9 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable no-empty */
 import styled from '@emotion/styled';
-import { Spacing } from '@/common/components/Spacing';
-import { SvgIcon } from '@/common/components/SvgIcon';
-import { useGetPlayData } from '@/features/PlayingSearch/apis';
+import { Spacing } from '@/shared/common/components/Spacing';
+import { SvgIcon } from '@/shared/common/components/SvgIcon';
+import { useGetPlayData } from '@/shared/search/apis';
 
 interface Props {
   value: string;
