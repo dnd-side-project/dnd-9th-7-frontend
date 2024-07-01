@@ -1,7 +1,7 @@
 import { Drawer } from 'vaul';
 import styled from '@emotion/styled';
-import { SvgIcon } from '@/common/components/SvgIcon';
-import { useBottomSheet } from '@/common/hooks/useBottomSheet';
+import { SvgIcon } from '@/shared/common/components/SvgIcon';
+import { useBottomSheet } from '@/shared/common/hooks/useBottomSheet';
 
 export const BottomSheet = () => {
   const {
