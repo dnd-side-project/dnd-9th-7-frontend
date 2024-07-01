@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { useQuery } from '@tanstack/react-query';
-import { SearchApi } from '@/apis';
+import { SearchApi } from '@/shared/common/apis';
 
 export const useGetMusicData = (value: string) => {
   const { data } = useQuery({

@@ -1,5 +1,5 @@
-import { client } from '@/apis/client';
-import { GetMusicDataResponse, GetPlayDataResponse } from '@/apis/types';
+import { GetMusicDataResponse, GetPlayDataResponse } from '@/shared/common/apis/types';
+import { client } from '@/shared/common/apis/client';
 
 export const SearchApi = {
   getMusicData: async (query: string, offset: number) => {
