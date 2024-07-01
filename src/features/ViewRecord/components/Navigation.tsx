@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom';
-import { Navigation as ViewRecordPageNavigation } from '@/common/components/Navigation';
-import { SvgIcon } from '@/common/components/SvgIcon';
+import { Navigation as ViewRecordPageNavigation } from '@/shared/common/components/Navigation';
+import { SvgIcon } from '@/shared/common/components/SvgIcon';
 
 export const Navigation = () => {
   const navigate = useNavigate();
