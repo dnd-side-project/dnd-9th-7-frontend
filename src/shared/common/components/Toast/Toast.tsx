@@ -1,8 +1,8 @@
 import styled from '@emotion/styled';
 import { AnimatePresence, motion } from 'framer-motion';
-import { SvgIcon } from '@/common/components/SvgIcon';
-import { useToast } from '@/common/hooks/useToast';
-import { Portal } from '@/common/components/Portal';
+import { SvgIcon } from '@/shared/common/components/SvgIcon';
+import { useToast } from '@/shared/common/hooks/useToast';
+import { Portal } from '@/shared/common/components/Portal';
 
 export const Toast = () => {
   const {

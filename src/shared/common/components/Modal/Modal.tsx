@@ -1,7 +1,7 @@
 import { PropsWithChildren, useMemo, createContext } from 'react';
 
 import styled from '@emotion/styled';
-import { Overlay } from '@/common/components/Overlay';
+import { Overlay } from '@/shared/common/components/Overlay';
 
 interface ModalProps {
   open: boolean;

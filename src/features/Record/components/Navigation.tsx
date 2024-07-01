@@ -1,7 +1,7 @@
-import { Modal } from '@/common/components/Modal';
-import { Navigation as RecordPageNavigation } from '@/common/components/Navigation';
-import { SvgIcon } from '@/common/components/SvgIcon';
-import { useOpen } from '@/common/hooks';
+import { Modal } from '@/shared/common/components/Modal';
+import { Navigation as RecordPageNavigation } from '@/shared/common/components/Navigation';
+import { SvgIcon } from '@/shared/common/components/SvgIcon';
+import { useOpen } from '@/shared/common/hooks';
 import { theme } from '@/styles';
 
 export const Navigation = () => {

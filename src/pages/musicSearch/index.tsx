@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import { Spacing } from '@/common/components/Spacing';
+import { Spacing } from '@/shared/common/components/Spacing';
 import { MusicSearchList, Navigation } from '@/features/MusicSearch/components';
-import { SearchInput } from '@/features/common/components';
+import { SearchInput } from '@/shared/search/components';
 
 const MusicSearchPage = () => {
   const [value, setValue] = useState('');
