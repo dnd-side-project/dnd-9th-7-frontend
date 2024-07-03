@@ -7,7 +7,7 @@ import styled from '@emotion/styled';
 import { useState } from 'react';
 import { commonStyles, StyledTitle } from '@/features/Record/record.style';
 import { theme } from '@/styles/theme';
-import { Spacing } from '@/common/components/Spacing';
+import { Spacing } from '@/shared/common/components/Spacing';
 import { RecordAreaImage } from './RecordAreaImage';
 
 /**

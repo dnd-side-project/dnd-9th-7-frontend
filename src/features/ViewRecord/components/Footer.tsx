@@ -3,9 +3,9 @@
 import styled from '@emotion/styled';
 import { Dispatch, SetStateAction } from 'react';
 import { ViewRecordTab } from 'src/types';
-import { Footer as ViewRecordPageFooter } from '@/common/components/Footer';
-import { Spacing } from '@/common/components/Spacing';
-import { SvgIcon } from '@/common/components/SvgIcon';
+import { Footer as ViewRecordPageFooter } from '@/shared/common/components/Footer';
+import { Spacing } from '@/shared/common/components/Spacing';
+import { SvgIcon } from '@/shared/common/components/SvgIcon';
 import { theme } from '@/styles';
 
 interface Props {

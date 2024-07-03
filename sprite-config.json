@@ -1,5 +1,5 @@
 {
-    "dest": "src/common/components/SvgIcon/sprite",
+    "dest": "src/shared/common/components/SvgIcon/sprite",
     "shape": {
       "id": {
         "separator": "-"

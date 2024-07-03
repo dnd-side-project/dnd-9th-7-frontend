@@ -3,8 +3,8 @@ import type { PropsWithChildren } from 'react';
 
 import styled from '@emotion/styled';
 import { AnimatePresence, motion } from 'framer-motion';
-import { Portal } from '@/common/components/Portal';
-import { useClickOutside } from '@/common/hooks';
+import { Portal } from '@/shared/common/components/Portal';
+import { useClickOutside } from '@/shared/common/hooks';
 
 interface Props {
   onClose?: () => void;
